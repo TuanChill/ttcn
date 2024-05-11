@@ -32,8 +32,6 @@ C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\obj\Debug\ttcn.csproj.GenerateResour
 C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\obj\Debug\ttcn.csproj.CoreCompileInputs.cache
 C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\obj\Debug\ttcn.exe
 C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\obj\Debug\ttcn.pdb
-D:\ttcn\ttcn\bin\Debug\tld.mdf
-D:\ttcn\ttcn\bin\Debug\tld_log.ldf
 D:\ttcn\ttcn\bin\Debug\ttcn.exe.config
 D:\ttcn\ttcn\bin\Debug\ttcn.exe
 D:\ttcn\ttcn\bin\Debug\ttcn.pdb

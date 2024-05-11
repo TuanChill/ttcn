@@ -207,11 +207,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="themecolor.cs" />
-    <Compile Include="tldDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>tldDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ChiNhanh.resx">
       <DependentUpon>ChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,17 +290,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="tldDataSet.xsc">
-      <DependentUpon>tldDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="tldDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>tldDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="tldDataSet.xss">
-      <DependentUpon>tldDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -324,13 +308,6 @@
     <None Include="Resources\avttinphat1.jpg" />
     <None Include="Resources\440556151_366144339772896_8391653436064868981_n.png" />
     <None Include="Resources\hhuh.png" />
-    <Content Include="tld.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="tld_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>tld.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

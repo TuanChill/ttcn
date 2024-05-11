@@ -36,8 +36,8 @@
             this.btnsua = new System.Windows.Forms.Button();
             this.btninsert = new System.Windows.Forms.Button();
             this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tldDataSet = new ttcn.tldDataSet();
-            this.sanPhamTableAdapter = new ttcn.tldDataSetTableAdapters.SanPhamTableAdapter();
+         //   this.tldDataSet = new ttcn.tldDataSet();
+           // this.sanPhamTableAdapter = new ttcn.tldDataSetTableAdapters.SanPhamTableAdapter();
             this.txtmasp = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tldDataSet)).BeginInit();
+        //    ((System.ComponentModel.ISupportInitialize)(this.tldDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgsanpham)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,16 +126,16 @@
             // sanPhamBindingSource
             // 
             this.sanPhamBindingSource.DataMember = "SanPham";
-            this.sanPhamBindingSource.DataSource = this.tldDataSet;
+         //   this.sanPhamBindingSource.DataSource = this.tldDataSet;
             // 
             // tldDataSet
             // 
-            this.tldDataSet.DataSetName = "tldDataSet";
-            this.tldDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          //  this.tldDataSet.DataSetName = "tldDataSet";
+            //this.tldDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sanPhamTableAdapter
             // 
-            this.sanPhamTableAdapter.ClearBeforeFill = true;
+        //    this.sanPhamTableAdapter.ClearBeforeFill = true;
             // 
             // txtmasp
             // 
@@ -364,7 +364,7 @@
             this.Text = "Sản phẩm";
             this.Load += new System.EventHandler(this.frmsanpham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tldDataSet)).EndInit();
+          //  ((System.ComponentModel.ISupportInitialize)(this.tldDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgsanpham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -379,9 +379,9 @@
         private System.Windows.Forms.Button btnxoa;
         private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.Button btninsert;
-        private tldDataSet tldDataSet;
+      //  private tldDataSet tldDataSet;
         private System.Windows.Forms.BindingSource sanPhamBindingSource;
-        private tldDataSetTableAdapters.SanPhamTableAdapter sanPhamTableAdapter;
+      //  private tldDataSetTableAdapters.SanPhamTableAdapter sanPhamTableAdapter;
         private System.Windows.Forms.TextBox txtmasp;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;

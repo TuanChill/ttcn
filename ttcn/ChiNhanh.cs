@@ -202,6 +202,8 @@ namespace ttcn
         {
             this.Close();
         }
+
+      
     }
    
 }

@@ -65,7 +65,7 @@ namespace ttcn
             this.panelDesktopPane.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitle.Text = childForm.Text;
+           // lblTitle.Text = childForm.Text;
         }
 
         // Các sự kiện khi nhấn các nút menu

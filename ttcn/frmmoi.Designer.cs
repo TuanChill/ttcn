@@ -42,12 +42,12 @@
             this.listsanpham = new System.Windows.Forms.ListView();
             this.imglistloaisanpham = new System.Windows.Forms.ImageList(this.components);
             this.listloaisanpham = new System.Windows.Forms.ListView();
-            this.tldDataSet1 = new ttcn.tldDataSet();
+         //   this.tldDataSet1 = new ttcn.tldDataSet();
             this.listViewHienthi = new System.Windows.Forms.ListView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.tldDataSet1)).BeginInit();
+          //  ((System.ComponentModel.ISupportInitialize)(this.tldDataSet1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -123,8 +123,8 @@
             // 
             // tldDataSet1
             // 
-            this.tldDataSet1.DataSetName = "tldDataSet";
-            this.tldDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+         //   this.tldDataSet1.DataSetName = "tldDataSet";
+           // this.tldDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // listViewHienthi
             // 
@@ -183,7 +183,7 @@
             this.Name = "frmphieunhapkho";
             this.Text = "frmphieunhapkho";
             this.Load += new System.EventHandler(this.frmphieunhapkho_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tldDataSet1)).EndInit();
+       //     ((System.ComponentModel.ISupportInitialize)(this.tldDataSet1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -195,7 +195,7 @@
         private System.Windows.Forms.ListView listsanpham;
         private System.Windows.Forms.ImageList imglistloaisanpham;
         private System.Windows.Forms.ListView listloaisanpham;
-        private tldDataSet tldDataSet1;
+       // private tldDataSet tldDataSet1;
         private System.Windows.Forms.ListView listViewHienthi;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
