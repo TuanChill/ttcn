@@ -13,10 +13,6 @@ namespace ttcn
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void DangNhap_Load(object sender, EventArgs e)
         {
@@ -29,7 +25,6 @@ namespace ttcn
             string password = Password.Text;
             Globals.Us = username;
             Globals.Pass = password;
-
             // Tạo instance của `frmthongtincanhan` và truyền instance của `frmlogin`
 
             SqlConnection Conn = Functions.Conn;
@@ -64,6 +59,7 @@ namespace ttcn
                             // Hiển thị form chính (frmmain)
                             main mainForm = new main();
                             mainForm.Show();
+                        this.Hide();
                     }
                     else
                     {
@@ -124,7 +120,8 @@ namespace ttcn
             }
         }
 
-        private void exitApp_Click(object sender, EventArgs e)
+     
+        private void exitApp_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {

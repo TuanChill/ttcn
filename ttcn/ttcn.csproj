@@ -319,6 +319,11 @@
     <None Include="Resources\11.jpg" />
     <None Include="Resources\Worm Hole - 6797.gif" />
     <None Include="Resources\TLD.jpg" />
+    <None Include="Resources\avttinphat.jpg" />
+    <None Include="Resources\nguyelieugo_ENCX.jpg" />
+    <None Include="Resources\avttinphat1.jpg" />
+    <None Include="Resources\440556151_366144339772896_8391653436064868981_n.png" />
+    <None Include="Resources\hhuh.png" />
     <Content Include="tld.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

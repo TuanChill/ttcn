@@ -17,8 +17,7 @@ namespace ttcn.Class
         //[Phương thức kết nối tới cơ sở dữ liệu]
         public static void Ketnoi()
         {
-            connstring = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\tld.mdf;Integrated Security=True;Connect Timeout=30";
-
+            connstring = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ttcn\ttcn\tld.mdf;Integrated Security=True;Connect Timeout=30";
             Conn = new SqlConnection();
             Conn.ConnectionString = connstring;
             Conn.Open();

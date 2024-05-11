@@ -151,7 +151,7 @@ namespace ttcn
         {
             OpenChildForm(new Hang(), sender);
         }
-
+       
         private void panelTitleBar_Paint(object sender, PaintEventArgs e)
         {
 
