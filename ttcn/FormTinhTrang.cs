@@ -188,5 +188,7 @@ namespace ttcn
         {
             this.Close();
         }
+
+        
     }
 }

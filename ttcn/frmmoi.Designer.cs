@@ -42,12 +42,10 @@
             this.listsanpham = new System.Windows.Forms.ListView();
             this.imglistloaisanpham = new System.Windows.Forms.ImageList(this.components);
             this.listloaisanpham = new System.Windows.Forms.ListView();
-         //   this.tldDataSet1 = new ttcn.tldDataSet();
             this.listViewHienthi = new System.Windows.Forms.ListView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-          //  ((System.ComponentModel.ISupportInitialize)(this.tldDataSet1)).BeginInit();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -74,8 +72,9 @@
             listViewItem3});
             this.listsanpham.LargeImageList = this.imglistanhsp;
             this.listsanpham.Location = new System.Drawing.Point(0, 0);
+            this.listsanpham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listsanpham.Name = "listsanpham";
-            this.listsanpham.Size = new System.Drawing.Size(727, 422);
+            this.listsanpham.Size = new System.Drawing.Size(969, 519);
             this.listsanpham.SmallImageList = this.imglistanhsp;
             this.listsanpham.TabIndex = 3;
             this.listsanpham.UseCompatibleStateImageBehavior = false;
@@ -113,18 +112,14 @@
             listViewItem5,
             listViewItem6});
             this.listloaisanpham.LargeImageList = this.imglistloaisanpham;
-            this.listloaisanpham.Location = new System.Drawing.Point(1, 417);
+            this.listloaisanpham.Location = new System.Drawing.Point(1, 513);
+            this.listloaisanpham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listloaisanpham.Name = "listloaisanpham";
-            this.listloaisanpham.Size = new System.Drawing.Size(727, 87);
+            this.listloaisanpham.Size = new System.Drawing.Size(969, 107);
             this.listloaisanpham.SmallImageList = this.imglistanhsp;
             this.listloaisanpham.TabIndex = 4;
             this.listloaisanpham.UseCompatibleStateImageBehavior = false;
             this.listloaisanpham.SelectedIndexChanged += new System.EventHandler(this.listloaisanpham_SelectedIndexChanged);
-            // 
-            // tldDataSet1
-            // 
-         //   this.tldDataSet1.DataSetName = "tldDataSet";
-           // this.tldDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // listViewHienthi
             // 
@@ -137,9 +132,10 @@
             listViewItem7,
             listViewItem8});
             this.listViewHienthi.LargeImageList = this.imglistanhsp;
-            this.listViewHienthi.Location = new System.Drawing.Point(0, 85);
+            this.listViewHienthi.Location = new System.Drawing.Point(4, 105);
+            this.listViewHienthi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listViewHienthi.Name = "listViewHienthi";
-            this.listViewHienthi.Size = new System.Drawing.Size(275, 337);
+            this.listViewHienthi.Size = new System.Drawing.Size(366, 414);
             this.listViewHienthi.SmallImageList = this.imglistanhsp;
             this.listViewHienthi.TabIndex = 5;
             this.listViewHienthi.UseCompatibleStateImageBehavior = false;
@@ -151,39 +147,42 @@
             // 
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(723, 0);
+            this.panel4.Location = new System.Drawing.Point(964, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(275, 504);
+            this.panel4.Size = new System.Drawing.Size(367, 620);
             this.panel4.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 513);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(367, 12);
+            this.panel1.TabIndex = 7;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.listViewHienthi);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(275, 504);
+            this.panel5.Size = new System.Drawing.Size(367, 620);
             this.panel5.TabIndex = 6;
             // 
-            // panel1
+            // frmmoi
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 417);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 10);
-            this.panel1.TabIndex = 7;
-            // 
-            // frmphieunhapkho
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 504);
+            this.ClientSize = new System.Drawing.Size(1335, 620);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.listloaisanpham);
             this.Controls.Add(this.listsanpham);
-            this.Name = "frmphieunhapkho";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmmoi";
             this.Text = "frmphieunhapkho";
             this.Load += new System.EventHandler(this.frmphieunhapkho_Load);
-       //     ((System.ComponentModel.ISupportInitialize)(this.tldDataSet1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);

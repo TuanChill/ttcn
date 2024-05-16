@@ -54,7 +54,7 @@ namespace ttcn
         {
             // Lấy tên loại sản phẩm đầu tiên
             string sqlTenLoaiSP = "SELECT TOP 1 c.tenloaisp FROM dbo.sanpham a JOIN dbo.tinhtrang b ON a.matinhtrang = b.matinhtrang JOIN dbo.LoaiSanPham c ON a.MaLoaiSP = c.MaLoaiSP JOIN dbo.Hang d ON a.MaHang = d.MaHang";
-            string tenLoaiSP = Class.Functions.getfilevalue(sqlTenLoaiSP);
+            string tenLoaiSP = Class.Functions.GetFieldValues(sqlTenLoaiSP);
 
             // Lấy danh sách sản phẩm tương ứng với loại sản phẩm
             string sqlSanPham = "SELECT a.TenSP FROM dbo.sanpham a JOIN dbo.tinhtrang b ON a.matinhtrang = b.matinhtrang JOIN dbo.LoaiSanPham c ON a.MaLoaiSP = c.MaLoaiSP JOIN dbo.Hang d ON a.MaHang = d.MaHang WHERE c.tenloaisp = N'" + tenLoaiSP + "'";

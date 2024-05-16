@@ -64,3 +64,5 @@ D:\ttcn\ttcn\obj\Debug\ttcn.csproj.GenerateResource.cache
 D:\ttcn\ttcn\obj\Debug\ttcn.csproj.CoreCompileInputs.cache
 D:\ttcn\ttcn\obj\Debug\ttcn.exe
 D:\ttcn\ttcn\obj\Debug\ttcn.pdb
+D:\ttcn\ttcn\obj\Debug\ttcn.PhieuNK.resources
+D:\ttcn\ttcn\obj\Debug\ttcn.csproj.ResolveComReference.cache

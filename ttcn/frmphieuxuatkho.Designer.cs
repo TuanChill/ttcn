@@ -186,7 +186,7 @@
             this.btnthemsanpham.Text = "Thêm sản phẩm";
             this.btnthemsanpham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnthemsanpham.UseVisualStyleBackColor = true;
-            this.btnthemsanpham.Click += new System.EventHandler(this.btnthemsanpham_Click);
+//            this.btnthemsanpham.Click += new System.EventHandler(this.btnthemsanpham_Click);
             // 
             // lblMaHDban
             // 

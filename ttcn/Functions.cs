@@ -17,7 +17,7 @@ namespace ttcn.Class
         //[Phương thức kết nối tới cơ sở dữ liệu]
         public static void Ketnoi()
         {
-            connstring = @"Data Source=LAPTOP-59G1UB6L\LANANH;Initial Catalog=qlkho;Integrated Security=True;Encrypt=False";
+            connstring = @"Data Source=LAPTOP-59G1UB6L\LANANH;Initial Catalog=qlk;Integrated Security=True;Encrypt=False";
             Conn = new SqlConnection();
             Conn.ConnectionString = connstring;
             Conn.Open();
@@ -137,37 +137,23 @@ namespace ttcn.Class
             }
         }
 
+
         //[Phương thức truy vấn một giá trị duy nhất từ cơ sở dữ liệu]
-        public static string getfilevalue(string sql)
+
+        public static string GetFieldValues(string sql) 
         {
-            string result = "";
-
-            try
+            string ma = "";
+            SqlCommand cmd = new SqlCommand(sql, Class.Functions.Conn);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader(); // thực thi sql 
+            while (reader.Read()) 
             {
-                using (SqlConnection connection = new SqlConnection(connstring))
-                {
-                    connection.Open();
-
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                result = reader.GetValue(0).ToString();
-                            }
-                        }
-                    }
-                }
+                ma = reader.GetValue(0).ToString(); 
+                
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return result;
+            reader.Close();
+            return ma;
         }
-
         public static int GetSelectedValue(ComboBox comboBox)
         {
             int result = -1;
@@ -218,6 +204,7 @@ namespace ttcn.Class
             }
             return result;
         }
+
         public static void ClearComboBoxes(params ComboBox[] comboBoxes)
             {
                 foreach (ComboBox comboBox in comboBoxes)

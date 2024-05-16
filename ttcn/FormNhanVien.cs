@@ -60,7 +60,7 @@ namespace ttcn
         private void loaddata()
         {
             string sql;
-            sql = "select a.manv, hotennv, gioitinh, ngaysinh, email, a.sdt, a.diachi,b.tenchinhanh, c.username, d.tenchucvu, c.password, c.quyenhan from dbo.nhanvien a join chinhanh b on a.machinhanh = b.machinhanh join taikhoan c on a.mataikhoan = c.mataikhoan join chucvu d on d.machucvu = a.machucvu where a.hoatdong = 1";
+            sql = "select a.manv, hotennv, gioitinh, ngaysinh, email, a.sdt, a.diachi,b.tenchinhanh, c.username, d.tenchucvu, c.password, c.quyenhan from dbo.nhanvien a join chinhanh b on a.machinhanh = b.machinhanh join taikhoan c on a.mataikhoan = c.mataikhoan join chucvu d on d.machucvu = a.machucvu ";
             DataTable a =  Functions.GetdataToTable(sql);
             dgnv.DataSource = a;
 
@@ -172,7 +172,7 @@ namespace ttcn
             string matk1 = reader["mataikhoan"].ToString();
             reader.Close();
             string sql;
-            sql = "INSERT INTO dbo.nhanvien (hotennv, gioitinh, ngaysinh, email, sdt, diachi, machinhanh, mataikhoan, machucvu, hoatdong) VALUES (N'" + txtht.Text.Trim() + "', N'" + txtgt.Text.Trim() + "','"+maskngaysinh.Text.Trim()+ "', N'" + txtemail.Text.Trim() +"', N'" + txtsdt.Text.Trim() + "', N'" + txtdc.Text.Trim() +"','" + cbmcn.SelectedValue  + "', '" + matk1 +"','" + cbmcv.SelectedValue +"', 1)";
+            sql = "INSERT INTO dbo.nhanvien (hotennv, gioitinh, ngaysinh, email, sdt, diachi, machinhanh, mataikhoan, machucvu) VALUES (N'" + txtht.Text.Trim() + "', N'" + txtgt.Text.Trim() + "','"+maskngaysinh.Text.Trim()+ "', N'" + txtemail.Text.Trim() +"', N'" + txtsdt.Text.Trim() + "', N'" + txtdc.Text.Trim() +"','" + cbmcn.SelectedValue  + "', '" + matk1 +"','" + cbmcv.SelectedValue +"', 1)";
             SqlCommand command = new SqlCommand(sql, Functions.Conn);
            // command.Parameters.AddWithValue("tk1", matk1);
 

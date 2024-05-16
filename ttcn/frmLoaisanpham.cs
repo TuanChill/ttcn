@@ -337,6 +337,8 @@ namespace ttcn
             this.Close();
         }
 
+       
+
         /*private void btnxoa_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
