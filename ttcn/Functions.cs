@@ -112,7 +112,7 @@ namespace ttcn.Class
             }
         }
 
-        //[Phương thức điền dữ liệu vào ComboBox từ cơ sở dữ liệu]
+        //[Phương thức điền dữ liệu vào ComboBox từ cơ sở dữ liệu] mã -> ten
         public static void Fillcombo(string sql, ComboBox cbo, string ma, string ten)
         {
             try
@@ -128,6 +128,30 @@ namespace ttcn.Class
                         cbo.DataSource = table;
                         cbo.ValueMember = ma;
                         cbo.DisplayMember = ten;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public static void Fillcomboma(string sql, ComboBox cbo, string ma)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connstring))
+                {
+                    connection.Open();
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(sql, connection))
+                    {
+                        DataTable table = new DataTable();
+                        adapter.Fill(table);
+                        cbo.DataSource = table;
+                        cbo.ValueMember = ma;
+                      
                     }
                 }
             }

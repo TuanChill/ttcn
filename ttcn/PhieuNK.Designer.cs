@@ -84,7 +84,6 @@
             this.datagridview_nguyenlieu.Size = new System.Drawing.Size(989, 197);
             this.datagridview_nguyenlieu.TabIndex = 40;
             this.datagridview_nguyenlieu.Click += new System.EventHandler(this.datagridview_nguyenlieu_Click);
-            this.datagridview_nguyenlieu.DoubleClick += new System.EventHandler(this.datagridview_nguyenlieu_DoubleClick);
             // 
             // txt_ma
             // 
@@ -213,6 +212,7 @@
             this.txt_gia.Name = "txt_gia";
             this.txt_gia.Size = new System.Drawing.Size(140, 22);
             this.txt_gia.TabIndex = 11;
+            this.txt_gia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_gia_KeyUp);
             // 
             // txt_sl
             // 
@@ -385,7 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 607);
+            this.ClientSize = new System.Drawing.Size(1047, 667);
             this.Controls.Add(this.lb_bangchu);
             this.Controls.Add(this.btn_luu);
             this.Controls.Add(this.btnThoat);

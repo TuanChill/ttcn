@@ -53,20 +53,24 @@ namespace ttcn
         }
         
 
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    OpenChildForm(new frmphieunhapkho(), sender);
+        //}
+
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmphieunhapkho(), sender);
+            OpenChildForm(new PNK(), sender);
         }
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    OpenChildForm(new frmphieuxuatkho(), sender);
+        //}
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frmphieuxuatkho(), sender);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frmphieuthuhoi(), sender);
-        }
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    OpenChildForm(new frmphieuthuhoi(), sender);
+        //}
         private void btnCloseChildForm_Click(object sender, EventArgs e)
         {
             if (activeForm != null)

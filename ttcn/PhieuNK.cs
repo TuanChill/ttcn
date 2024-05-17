@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,7 +88,7 @@ namespace ttcn
 
             // Đặt lại tiêu đề cho các cột
             //maphieunk,manguyenlieu, tennguyenlieu, ngaytao, nhanvien, gia,soluong, nhacungcap, thanhtien
-            datagridview_nguyenlieu.Columns[0].HeaderText = "Mã phiếu nhập";
+            datagridview_nguyenlieu.Columns[0].HeaderText = "Mã Phiếu nhập kho";
             datagridview_nguyenlieu.Columns[1].HeaderText = "Mã nguyên liệu";
             datagridview_nguyenlieu.Columns[2].HeaderText = "Tên nguyên liệu";
             // dtgphieunhapkho.Columns[2].HeaderText = "Ngày tạo";
@@ -127,11 +128,12 @@ namespace ttcn
                 return;
             }
             txt_ma.Text = datagridview_nguyenlieu.CurrentRow.Cells["MaPhieuNK"].Value.ToString();
-            string manl,mancc,ma;
+            string manl,mancc,manv,maphieunk;
             manl = datagridview_nguyenlieu.CurrentRow.Cells["MaNL"].Value.ToString();
+            maphieunk = datagridview_nguyenlieu.CurrentRow.Cells["MaPhieuNK"].Value.ToString();
             combo_ten.Text = Functions.GetFieldValues("SELECT TenNL FROM Nguyenlieu WHERE MaNL = N'" + manl + "'");
-            //mancc = datagridview_nguyenlieu.CurrentRow.Cells["MaNCC"].Value.ToString();
-            //combo_ncc.Text = Functions.GetFieldValues("SELECT TenNCC FROM NhaCungCap WHERE MaNCC = N'" + mancc + "'");
+            combo_nv.Text = Functions.GetFieldValues("select Tennhanvien from Nhanvien as a JOIN Phieunhapkho AS b ON a.Manhanvien = b.Manhanvien  WHERE MaPhieuNK = N'" + maphieunk + "'");
+            combo_ncc.Text = Functions.GetFieldValues("select TenNCC from Nguyenlieu as a JOIN NhaCungCap AS b ON a.MaNCC = b.MaNCC WHERE MaNL = N'" + manl + "'");
             txt_sl.Text = datagridview_nguyenlieu.CurrentRow.Cells["SoLuong"].Value.ToString();
             txt_ttien.Text = datagridview_nguyenlieu.CurrentRow.Cells["thanhtien"].Value.ToString();
             
@@ -202,19 +204,19 @@ namespace ttcn
             }
         }
 
-        private void datagridview_nguyenlieu_DoubleClick(object sender, EventArgs e)
-        {
-            string mapn;
-            if (MessageBox.Show("Bạn có muốn hiển thị thông tin chi tiết?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                mapn = datagridview_nguyenlieu.CurrentRow.Cells["MaPhieuNK"].Value.ToString();
-                PhieuNK frm = new PhieuNK();
-                frm.txt_ma.Text = mapn;
-                frm.StartPosition = FormStartPosition.CenterScreen;
-                frm.ShowDialog();
-            }
+        //private void datagridview_nguyenlieu_DoubleClick(object sender, EventArgs e)
+        //{
+        //    string mapn;
+        //    if (MessageBox.Show("Bạn có muốn hiển thị thông tin chi tiết?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+        //    {
+        //        mapn = datagridview_nguyenlieu.CurrentRow.Cells["MaPhieuNK"].Value.ToString();
+        //        PhieuNK frm = new PhieuNK();
+        //        frm.txt_ma.Text = mapn;
+        //        frm.StartPosition = FormStartPosition.CenterScreen;
+        //        frm.ShowDialog();
+        //    }
 
-        }
+        //}
 
     
 
@@ -346,19 +348,19 @@ namespace ttcn
                 // Mã phiếu nk được sinh tự động do đó không có trường hợp trùng khóa
                 if (dtngaytao.Text.Length == 0)
                 {
-                    MessageBox.Show("Bạn phải nhập ngày ", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn phải chọn ngày ", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     dtngaytao.Focus();
                     return;
                 }
                 if (combo_nv.Text.Length == 0)
                 {
-                    MessageBox.Show("Bạn phải nhập nhân viên", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn phải chọn nhân viên", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     combo_nv.Focus();
                     return;
                 }
                 if (combo_ten.Text.Length == 0)
                 {
-                    MessageBox.Show("Bạn phải nhập tên nguyên liệu", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn phải chọn nguyên liệu", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     combo_ten.Focus();
                     return;
                 }
@@ -370,7 +372,7 @@ namespace ttcn
                 }
                 if (combo_ncc.Text.Length == 0)
                 {
-                    MessageBox.Show("Bạn phải nhập nhà cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn phải chọn nhà cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     combo_ten.Focus();
                     return;
                 }
@@ -383,42 +385,44 @@ namespace ttcn
                 //lưu thông tin chung vào bảng 
                 sql = "INSERT INTO Chitietphieunhapkho(MaPhieuNK, MaNL, SoLuong, thanhtien) VALUES(N'" + txt_ma.Text.Trim() + "', '" 
                       + "',N'" + combo_ten.SelectedValue + "',N'" +txt_sl.Text.Trim() + "'," + txt_ttien.Text + ")";
+                
                 Functions.Runsql(sql);
             }
 
            
             if (Functions.Checkkey(sql))
             {
-                MessageBox.Show("Mã nguyên liệu này đã có, bạn phải nhập mã khác", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mã nguyên liệu này đã có, vui lòng nhập mã khác", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ResetValues();
                 combo_ten.Focus();
                 return;
             }
-            // Kiểm tra xem số lượng hàng trong kho còn đủ để cung cấp không?
-            sl = Convert.ToDouble(Functions.GetFieldValues("SELECT soluong FROM Hangtonkho WHERE MaNL = N'" + combo_ten.SelectedValue + "'"));
-            if (Convert.ToDouble(txt_sl.Text) > sl)
-            {
-                MessageBox.Show("Số lượng mặt hàng này chỉ còn " + sl, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txt_sl.Text = "";
-                txt_sl.Focus();
-                return;
-            }
-            sql = "INSERT INTO Chitietphieunhapkho(MaPhieuNK,MaNL,SoLuong,Thanhtien) VALUES(N'" + txt_ma.Text.Trim() + "', N'" + combo_ten.SelectedValue + 
-"'," + txt_sl.Text + ",," +  txt_ttien.Text + ")";
-            Functions.Runsql(sql);
-            Loaddata();
-            // Cập nhật lại số lượng của mặt hàng vào bảng hangtonkho
-            SLcon = sl - Convert.ToDouble(txt_sl.Text);
-            sql = "UPDATE Hangtonkho SET soluong =" + SLcon + " WHERE MaNL= N'" +combo_ten.SelectedValue + "'";
-            Functions.Runsql(sql);
-            // Cập nhật lại tổng tiền 
+//            // Kiểm tra xem số lượng hàng trong kho còn đủ để cung cấp không?
+//            sl = Convert.ToDouble(Functions.GetFieldValues("SELECT soluong FROM Hangtonkho WHERE MaNL = N'" + combo_ten.SelectedValue + "'"));
+//            if (Convert.ToDouble(txt_sl.Text) > sl)
+//            {
+//                MessageBox.Show("Số lượng mặt hàng này chỉ còn " + sl, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+//                txt_sl.Text = "";
+//                txt_sl.Focus();
+//                return;
+//            }
+//            sql = "INSERT INTO Chitietphieunhapkho(MaPhieuNK,MaNL,SoLuong,Thanhtien)" +
+//                " VALUES(N'" + txt_ma.Text.Trim() + "', N'" + combo_ten.SelectedValue + 
+//"'," + txt_sl.Text + ",," +  txt_ttien.Text + "'";
+//            Functions.Runsql(sql);
+//            Loaddata();
+//            // Cập nhật lại số lượng của mặt hàng vào bảng hangtonkho
+//            SLcon = sl - Convert.ToDouble(txt_sl.Text);
+//            sql = "UPDATE Hangtonkho SET soluong =" + SLcon + " WHERE MaNL= N'" +combo_ten.SelectedValue + "'";
+//            Functions.Runsql(sql);
+//            // Cập nhật lại tổng tiền 
 
-            tong = Convert.ToDouble(Functions.GetFieldValues("SELECT tongsotien FROM Phieunhapkho WHERE MaPhieuNK = N'" + txt_ma.Text + "'"));
-            Tongmoi = tong + Convert.ToDouble(txttongtien.Text);
-            sql = "UPDATE Phieunhapkho SET Tongtien =" + Tongmoi + " WHERE MaPhieuNK = N'" + txttongtien.Text + "'";
-            Functions.Runsql(sql);
-            txttongtien.Text = Tongmoi.ToString();
-            lb_bangchu.Text = "Bằng chữ: " + Functions.ChuyenSoSangChu(Tongmoi.ToString());
+//            tong = Convert.ToDouble(Functions.GetFieldValues("SELECT tongsotien FROM Phieunhapkho WHERE MaPhieuNK = N'" + txt_ma.Text + "'"));
+//            Tongmoi = tong + Convert.ToDouble(txttongtien.Text);
+//            sql = "UPDATE Phieunhapkho SET Tongtien =" + Tongmoi + " WHERE MaPhieuNK = N'" + txttongtien.Text + "'";
+//            Functions.Runsql(sql);
+//            txttongtien.Text = Tongmoi.ToString();
+//            lb_bangchu.Text = "Bằng chữ: " + Functions.ChuyenSoSangChu(Tongmoi.ToString());
             ResetValues();
            
             btnThem.Enabled = true;
@@ -434,6 +438,41 @@ namespace ttcn
            
             btn_luu.Enabled = false;
             txt_ma.Enabled = false;
+        }
+
+        private void txt_gia_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SendKeys.Send("{TAB}");
+            tinhTien();
+        }
+        private void tinhTien()
+        {
+            decimal gia;
+            int sl;
+
+            if (Decimal.TryParse(txt_gia.Text, out gia) && Int32.TryParse(txt_sl.Text, out sl))
+            {
+                decimal thanhTien = gia * sl;
+
+                // Improved formatting with user-defined precision
+                string formattedThanhTien;
+                if (thanhTien >= 1000)  // Display with thousands separator and decimals only if necessary
+                {
+                    formattedThanhTien = thanhTien.ToString("0,0.###", CultureInfo.GetCultureInfo("vi-VN"));
+                }
+                else  // Display without thousands separator or decimals for values less than 1000
+                {
+                    formattedThanhTien = thanhTien.ToString("0", CultureInfo.GetCultureInfo("vi-VN"));
+                }
+
+                txt_ttien.Text = formattedThanhTien;
+            }
+            else
+            {
+                txt_ttien.Text = "0";
+            }
+
         }
     }
 }
