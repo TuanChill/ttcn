@@ -1,5 +1,3 @@
-C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\bin\Debug\tld.mdf
-C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\bin\Debug\tld_log.ldf
 C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\bin\Debug\ttcn.exe.config
 C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\bin\Debug\ttcn.exe
 C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\bin\Debug\ttcn.pdb

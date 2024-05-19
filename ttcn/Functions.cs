@@ -17,7 +17,7 @@ namespace ttcn.Class
         //[Phương thức kết nối tới cơ sở dữ liệu]
         public static void Ketnoi()
         {
-            connstring = @"Data Source=LAPTOP-59G1UB6L\LANANH;Initial Catalog=qlkho;Integrated Security=True;Encrypt=False";
+            connstring = @"Data Source=DESKTOP-1BG474C;Initial Catalog=qlk;Integrated Security=True;";
             Conn = new SqlConnection();
             Conn.ConnectionString = connstring;
             Conn.Open();
