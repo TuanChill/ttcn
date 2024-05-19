@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_ten = new System.Windows.Forms.TextBox();
@@ -42,6 +43,7 @@
             this.btnluu = new System.Windows.Forms.Button();
             this.btnhuy = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_nguyenlieu)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -81,6 +83,7 @@
             this.txt_ten.Name = "txt_ten";
             this.txt_ten.Size = new System.Drawing.Size(237, 27);
             this.txt_ten.TabIndex = 3;
+            this.toolTip2.SetToolTip(this.txt_ten, "Hãy nhập vào trường này");
             // 
             // txt_maloai
             // 
@@ -89,6 +92,7 @@
             this.txt_maloai.Name = "txt_maloai";
             this.txt_maloai.Size = new System.Drawing.Size(237, 27);
             this.txt_maloai.TabIndex = 2;
+            this.txt_maloai.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_maloai_KeyUp);
             // 
             // label3
             // 
@@ -124,7 +128,6 @@
             this.datagridview_nguyenlieu.RowTemplate.Height = 28;
             this.datagridview_nguyenlieu.Size = new System.Drawing.Size(654, 146);
             this.datagridview_nguyenlieu.TabIndex = 2;
-//            this.datagridview_nguyenlieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgloaisp_CellContentClick);
             this.datagridview_nguyenlieu.Click += new System.EventHandler(this.datagridview_nguyenlieu_Click);
             // 
             // groupBox2
@@ -255,5 +258,6 @@
         private System.Windows.Forms.Button btnluu;
         private System.Windows.Forms.Button btnhuy;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }

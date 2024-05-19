@@ -395,5 +395,11 @@ namespace ttcn
             btnxoa.Enabled = true;
             btnhuy.Enabled = true;
         }
+
+        private void txt_maloai_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SendKeys.Send("{TAB}");
+        }
     }
 }
