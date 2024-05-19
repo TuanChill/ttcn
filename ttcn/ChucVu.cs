@@ -35,7 +35,7 @@ namespace ttcn
 
             SqlConnection conn = Functions.Conn;
             string sql;
-            sql = "select machucvu, tenchucvu from dbo.chucvu";
+            sql = "select Machucvu, Tenchucvu from Chucvu";
             DataTable a = Functions.GetdataToTable(sql);
             dgcv.DataSource = a;
 
@@ -64,7 +64,7 @@ namespace ttcn
             {
                 Functions.Conn.Open();
             }
-            string query = "SELECT MAX(MACHUCVU) FROM CHUCVU";
+            string query = "SELECT MAX(Machucvu) FROM Chucvu";
             SqlCommand command = new SqlCommand(query, Functions.Conn);
             object result = command.ExecuteScalar();
             if (result != DBNull.Value)
@@ -82,25 +82,42 @@ namespace ttcn
 
         
         private void btnluu_Click(object sender, EventArgs e)
-        { 
+        {
             string sql;
-            sql = "INSERT INTO dbo.chucvu (tenchucvu) VALUES (N'" + txttcv.Text.Trim() + "')";
-
-            if (!Functions.Checkkey(sql))
+            if (txtmcv.Text == "")
             {
-                // Thực hiện câu lệnh INSERT khi không có trùng khóa
-                // ...
-
-                txttcv.Text = "";
+                MessageBox.Show("Bạn phải nhập mã chức vụ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                txtmcv.Focus();
+                return;
+            }
+            if (txttcv.Text == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên chức vụ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 txttcv.Focus();
-                MessageBox.Show("Thêm dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            else
+
+
+
+            sql = "SELECT Machucvu FROM Chucvu WHERE Machucvu=N'" + txtmcv.Text.Trim() + "'";
+            if (Functions.Checkkey(sql))
             {
-                MessageBox.Show("Trùng khóa! Dữ liệu đã tồn tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mã tình trạng này đã tồn, vui lòng nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtmcv.Focus();
+                txtmcv.Text = "";
+                return;
             }
+            sql = "INSERT INTO Chucvu (Machucvu, Tenchucvu) " + "VALUES (N'" + txtmcv.Text.Trim() + "', N'" + txttcv.Text.Trim() + "')";
 
 
+            Functions.Runsql(sql);
+            loaddata();
+            resetvalue();
+            btnxoa.Enabled = true;
+            btnthem.Enabled = true;
+            btnsua.Enabled = true;
+            btnluu.Enabled = false;
+            txtmcv.Enabled = false;
             loaddata();
         }
 
@@ -112,7 +129,7 @@ namespace ttcn
         {
             SqlConnection conn = Functions.Conn;
             string sql;
-            sql = "select machucvu, tenchucvu from dbo.chucvu";
+            sql = "select Machucvu, Tenchucvu from Chucvu";
             DataTable a = Functions.GetdataToTable(sql);
             dgcv.DataSource = a;
         }
@@ -138,7 +155,7 @@ namespace ttcn
             if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int maCV = Convert.ToInt32(txtmcv.Text.Trim());
-                string sql = "DELETE FROM dbo.chucvu WHERE machucvu = " + maCV;
+                string sql = "DELETE FROM Chucvu WHERE Machucvu = " + maCV;
 
                 string connectionString = Functions.Conn.ConnectionString;
 
@@ -169,7 +186,7 @@ namespace ttcn
         private void btnsua_Click(object sender, EventArgs e)
         {
             int maCV = Convert.ToInt32(txtmcv.Text.Trim());
-            string sql = "UPDATE dbo.chucvu SET tenchucvu = N'" + txttcv.Text.Trim() + "' WHERE machucvu = " + maCV;
+            string sql = "UPDATE Chucvu SET Tenchucvu = N'" + txttcv.Text.Trim() + "' WHERE Machucvu = " + maCV;
             string connectionString = Functions.Conn.ConnectionString;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -202,8 +219,8 @@ namespace ttcn
 
         private void dgcv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtmcv.Text = dgcv.CurrentRow.Cells["machucvu"].Value.ToString();
-            txttcv.Text = dgcv.CurrentRow.Cells["tenchucvu"].Value.ToString();
+            txtmcv.Text = dgcv.CurrentRow.Cells["Machucvu"].Value.ToString();
+            txttcv.Text = dgcv.CurrentRow.Cells["Tenchucvu"].Value.ToString();
             btnsua.Enabled = true;
             btnxoa.Enabled = true;
             btnhuy.Enabled = true;

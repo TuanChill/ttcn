@@ -248,5 +248,10 @@ namespace ttcn
             frmlogin a = new frmlogin();
             a.Show();
         }
+
+        private void button4_ClientSizeChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
