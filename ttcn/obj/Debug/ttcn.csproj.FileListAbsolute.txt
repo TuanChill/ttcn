@@ -48,7 +48,6 @@ D:\ttcn\ttcn\obj\Debug\ttcn.FormTinhTrang.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.Globals.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmdanhsach.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmdondathang.resources
-D:\ttcn\ttcn\obj\Debug\ttcn.frmLoaisanpham.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmmoi.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmphieuthuhoi.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmphieuxuatkho.resources
@@ -67,3 +66,4 @@ D:\ttcn\ttcn\obj\Debug\ttcn.PhieuNK.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.csproj.ResolveComReference.cache
 D:\ttcn\ttcn\obj\Debug\ttcn.PNK.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.formNL.resources
+D:\ttcn\ttcn\obj\Debug\ttcn.frmloainl.resources

@@ -18,9 +18,9 @@ namespace ttcn
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new DangNhap());
             // Application.Run(new NL());
-               Application.Run(new formNL());
+             //  Application.Run(new formNL());
          //    Application.Run(new formNguyenlieu());
-            //Application.Run(new frmLoaisanpham()); 
+            Application.Run(new frmloainl()); 
         }
     }
 }

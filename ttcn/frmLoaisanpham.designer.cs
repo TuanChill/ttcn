@@ -1,6 +1,6 @@
 ﻿namespace ttcn
 {
-    partial class frmLoaisanpham
+    partial class frmloainl
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txttenlsp = new System.Windows.Forms.TextBox();
-            this.txtmalsp = new System.Windows.Forms.TextBox();
+            this.txt_ten = new System.Windows.Forms.TextBox();
+            this.txt_maloai = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.datagridview_nguyenlieu = new System.Windows.Forms.DataGridView();
@@ -60,8 +60,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txttenlsp);
-            this.groupBox1.Controls.Add(this.txtmalsp);
+            this.groupBox1.Controls.Add(this.txt_ten);
+            this.groupBox1.Controls.Add(this.txt_maloai);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -74,21 +74,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin loại nguyên liệu";
             // 
-            // txttenlsp
+            // txt_ten
             // 
-            this.txttenlsp.Location = new System.Drawing.Point(320, 76);
-            this.txttenlsp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txttenlsp.Name = "txttenlsp";
-            this.txttenlsp.Size = new System.Drawing.Size(237, 27);
-            this.txttenlsp.TabIndex = 3;
+            this.txt_ten.Location = new System.Drawing.Point(320, 76);
+            this.txt_ten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_ten.Name = "txt_ten";
+            this.txt_ten.Size = new System.Drawing.Size(237, 27);
+            this.txt_ten.TabIndex = 3;
             // 
-            // txtmalsp
+            // txt_maloai
             // 
-            this.txtmalsp.Location = new System.Drawing.Point(320, 36);
-            this.txtmalsp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtmalsp.Name = "txtmalsp";
-            this.txtmalsp.Size = new System.Drawing.Size(237, 27);
-            this.txtmalsp.TabIndex = 2;
+            this.txt_maloai.Location = new System.Drawing.Point(320, 36);
+            this.txt_maloai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_maloai.Name = "txt_maloai";
+            this.txt_maloai.Size = new System.Drawing.Size(237, 27);
+            this.txt_maloai.TabIndex = 2;
             // 
             // label3
             // 
@@ -124,7 +124,8 @@
             this.datagridview_nguyenlieu.RowTemplate.Height = 28;
             this.datagridview_nguyenlieu.Size = new System.Drawing.Size(654, 146);
             this.datagridview_nguyenlieu.TabIndex = 2;
-            this.datagridview_nguyenlieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgloaisp_CellContentClick);
+//            this.datagridview_nguyenlieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgloaisp_CellContentClick);
+            this.datagridview_nguyenlieu.Click += new System.EventHandler(this.datagridview_nguyenlieu_Click);
             // 
             // groupBox2
             // 
@@ -145,7 +146,7 @@
             this.btnthem.Location = new System.Drawing.Point(85, 444);
             this.btnthem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(85, 26);
+            this.btnthem.Size = new System.Drawing.Size(88, 46);
             this.btnthem.TabIndex = 4;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = true;
@@ -157,7 +158,7 @@
             this.btnsua.Location = new System.Drawing.Point(207, 444);
             this.btnsua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(81, 26);
+            this.btnsua.Size = new System.Drawing.Size(83, 46);
             this.btnsua.TabIndex = 6;
             this.btnsua.Text = "Sửa ";
             this.btnsua.UseVisualStyleBackColor = true;
@@ -166,10 +167,10 @@
             // btnxoa
             // 
             this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxoa.Location = new System.Drawing.Point(329, 444);
+            this.btnxoa.Location = new System.Drawing.Point(330, 444);
             this.btnxoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(78, 26);
+            this.btnxoa.Size = new System.Drawing.Size(80, 46);
             this.btnxoa.TabIndex = 7;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
@@ -181,7 +182,7 @@
             this.btnluu.Location = new System.Drawing.Point(451, 444);
             this.btnluu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnluu.Name = "btnluu";
-            this.btnluu.Size = new System.Drawing.Size(74, 26);
+            this.btnluu.Size = new System.Drawing.Size(76, 46);
             this.btnluu.TabIndex = 8;
             this.btnluu.Text = "Lưu";
             this.btnluu.UseVisualStyleBackColor = true;
@@ -190,10 +191,10 @@
             // btnhuy
             // 
             this.btnhuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhuy.Location = new System.Drawing.Point(577, 444);
+            this.btnhuy.Location = new System.Drawing.Point(576, 444);
             this.btnhuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnhuy.Name = "btnhuy";
-            this.btnhuy.Size = new System.Drawing.Size(77, 26);
+            this.btnhuy.Size = new System.Drawing.Size(80, 46);
             this.btnhuy.TabIndex = 9;
             this.btnhuy.Text = "Hủy";
             this.btnhuy.UseVisualStyleBackColor = true;
@@ -202,20 +203,20 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(694, 444);
+            this.button1.Location = new System.Drawing.Point(713, 444);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 26);
+            this.button1.Size = new System.Drawing.Size(78, 46);
             this.button1.TabIndex = 10;
             this.button1.Text = "Đóng";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // frmLoaisanpham
+            // frmloainl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 501);
+            this.ClientSize = new System.Drawing.Size(841, 526);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnhuy);
             this.Controls.Add(this.btnluu);
@@ -226,8 +227,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmLoaisanpham";
-            this.Text = "FormLoaiSP";
+            this.Name = "frmloainl";
+            this.Text = "Loại nguyên liệu";
             this.Load += new System.EventHandler(this.frmLoaisanpham_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -242,10 +243,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtmalsp;
+        private System.Windows.Forms.TextBox txt_maloai;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txttenlsp;
+        private System.Windows.Forms.TextBox txt_ten;
         private System.Windows.Forms.DataGridView datagridview_nguyenlieu;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnthem;

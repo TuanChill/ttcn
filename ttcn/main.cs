@@ -209,7 +209,7 @@ namespace ttcn
 
         private void button4_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmLoaisanpham(), sender);
+            OpenChildForm(new frmloainl(), sender);
         }
 
         private void button4_Click_1(object sender, EventArgs e)
