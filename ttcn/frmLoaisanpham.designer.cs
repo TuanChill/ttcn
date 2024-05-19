@@ -34,7 +34,7 @@
             this.txtmalsp = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgloaisp = new System.Windows.Forms.DataGridView();
+            this.datagridview_nguyenlieu = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnthem = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
@@ -43,7 +43,7 @@
             this.btnhuy = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgloaisp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridview_nguyenlieu)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,11 +52,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(288, 7);
+            this.label1.Location = new System.Drawing.Point(244, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 42);
+            this.label1.Size = new System.Drawing.Size(380, 42);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Loại Sản Phẩm";
+            this.label1.Text = "LOẠI NGUYÊN LIỆU";
             // 
             // groupBox1
             // 
@@ -65,14 +65,14 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(52, 75);
+            this.groupBox1.Location = new System.Drawing.Point(85, 123);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Size = new System.Drawing.Size(688, 119);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin loại sản phẩm";
+            this.groupBox1.Text = "Thông tin loại nguyên liệu";
             // 
             // txttenlsp
             // 
@@ -96,9 +96,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(141, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 20);
+            this.label3.Size = new System.Drawing.Size(162, 20);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Tên loại sản phẩm:";
+            this.label3.Text = "Tên loại nguyên liệu:";
             // 
             // label2
             // 
@@ -106,31 +106,31 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(146, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 20);
+            this.label2.Size = new System.Drawing.Size(157, 20);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Mã loại sản phẩm:";
+            this.label2.Text = "Mã loại nguyên liệu:";
             // 
-            // dgloaisp
+            // datagridview_nguyenlieu
             // 
-            this.dgloaisp.AllowUserToAddRows = false;
-            this.dgloaisp.AllowUserToDeleteRows = false;
-            this.dgloaisp.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgloaisp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgloaisp.Location = new System.Drawing.Point(16, 23);
-            this.dgloaisp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgloaisp.Name = "dgloaisp";
-            this.dgloaisp.ReadOnly = true;
-            this.dgloaisp.RowHeadersWidth = 62;
-            this.dgloaisp.RowTemplate.Height = 28;
-            this.dgloaisp.Size = new System.Drawing.Size(654, 146);
-            this.dgloaisp.TabIndex = 2;
-            this.dgloaisp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgloaisp_CellContentClick);
+            this.datagridview_nguyenlieu.AllowUserToAddRows = false;
+            this.datagridview_nguyenlieu.AllowUserToDeleteRows = false;
+            this.datagridview_nguyenlieu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.datagridview_nguyenlieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridview_nguyenlieu.Location = new System.Drawing.Point(16, 23);
+            this.datagridview_nguyenlieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.datagridview_nguyenlieu.Name = "datagridview_nguyenlieu";
+            this.datagridview_nguyenlieu.ReadOnly = true;
+            this.datagridview_nguyenlieu.RowHeadersWidth = 62;
+            this.datagridview_nguyenlieu.RowTemplate.Height = 28;
+            this.datagridview_nguyenlieu.Size = new System.Drawing.Size(654, 146);
+            this.datagridview_nguyenlieu.TabIndex = 2;
+            this.datagridview_nguyenlieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgloaisp_CellContentClick);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dgloaisp);
+            this.groupBox2.Controls.Add(this.datagridview_nguyenlieu);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(52, 210);
+            this.groupBox2.Location = new System.Drawing.Point(85, 258);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -142,7 +142,7 @@
             // btnthem
             // 
             this.btnthem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnthem.Location = new System.Drawing.Point(52, 396);
+            this.btnthem.Location = new System.Drawing.Point(85, 444);
             this.btnthem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnthem.Name = "btnthem";
             this.btnthem.Size = new System.Drawing.Size(85, 26);
@@ -154,7 +154,7 @@
             // btnsua
             // 
             this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsua.Location = new System.Drawing.Point(174, 396);
+            this.btnsua.Location = new System.Drawing.Point(207, 444);
             this.btnsua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(81, 26);
@@ -166,7 +166,7 @@
             // btnxoa
             // 
             this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxoa.Location = new System.Drawing.Point(296, 396);
+            this.btnxoa.Location = new System.Drawing.Point(329, 444);
             this.btnxoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(78, 26);
@@ -178,7 +178,7 @@
             // btnluu
             // 
             this.btnluu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnluu.Location = new System.Drawing.Point(418, 396);
+            this.btnluu.Location = new System.Drawing.Point(451, 444);
             this.btnluu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnluu.Name = "btnluu";
             this.btnluu.Size = new System.Drawing.Size(74, 26);
@@ -190,7 +190,7 @@
             // btnhuy
             // 
             this.btnhuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhuy.Location = new System.Drawing.Point(544, 396);
+            this.btnhuy.Location = new System.Drawing.Point(577, 444);
             this.btnhuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnhuy.Name = "btnhuy";
             this.btnhuy.Size = new System.Drawing.Size(77, 26);
@@ -202,7 +202,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(661, 396);
+            this.button1.Location = new System.Drawing.Point(694, 444);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 26);
@@ -215,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 442);
+            this.ClientSize = new System.Drawing.Size(841, 501);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnhuy);
             this.Controls.Add(this.btnluu);
@@ -231,7 +231,7 @@
             this.Load += new System.EventHandler(this.frmLoaisanpham_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgloaisp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridview_nguyenlieu)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -246,7 +246,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txttenlsp;
-        private System.Windows.Forms.DataGridView dgloaisp;
+        private System.Windows.Forms.DataGridView datagridview_nguyenlieu;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.Button btnsua;

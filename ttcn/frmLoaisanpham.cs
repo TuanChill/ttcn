@@ -171,24 +171,24 @@ namespace ttcn
 
             SqlConnection conn = Functions.Conn;
             string sql;
-            sql = "select maloaisp, tenloaisp from dbo.loaisanpham";
+            sql = "select Maloai, Tenloai from LoaiNL";
             DataTable a = Functions.GetdataToTable(sql);
-            dgloaisp.DataSource = a;
+            datagridview_nguyenlieu.DataSource = a;
 
-            dgloaisp.Columns[0].HeaderText = "Mã loại sản phẩm";
-            dgloaisp.Columns[1].HeaderText = "Tên loại sản phẩm";
-            dgloaisp.Columns[0].Width = 135;
-            dgloaisp.Columns[1].Width = 150;
-            dgloaisp.AllowUserToAddRows = false;
-            dgloaisp.EditMode = DataGridViewEditMode.EditProgrammatically;
+            datagridview_nguyenlieu.Columns[0].HeaderText = "Mã loại nguyên liệu";
+            datagridview_nguyenlieu.Columns[1].HeaderText = "Tên loại nguyên liệu";
+            datagridview_nguyenlieu.Columns[0].Width = 135;
+            datagridview_nguyenlieu.Columns[1].Width = 150;
+            datagridview_nguyenlieu.AllowUserToAddRows = false;
+            datagridview_nguyenlieu.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
         private void loaddata()
         {
             SqlConnection conn = Functions.Conn;
             string sql;
-            sql = "select maloaisp, tenloaisp from dbo.loaisanpham";
+            sql = "select Maloai, Tenloai from LoaiNL";
             DataTable a = Functions.GetdataToTable(sql);
-            dgloaisp.DataSource = a;
+            datagridview_nguyenlieu.DataSource = a;
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -205,7 +205,7 @@ namespace ttcn
             {
                 Functions.Conn.Open();
             }
-            string query = "SELECT MAX(MaLoaiSP) FROM LoaiSanPham";
+            string query = "SELECT MAX(Maloai) FROM LoaiNL";
             SqlCommand command = new SqlCommand(query, Functions.Conn);
             object result = command.ExecuteScalar();
             if (result != DBNull.Value)
@@ -239,8 +239,8 @@ namespace ttcn
 
         private void dgloaisp_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtmalsp.Text = dgloaisp.CurrentRow.Cells["maloaisp"].Value.ToString();
-            txttenlsp.Text = dgloaisp.CurrentRow.Cells["tenloaisp"].Value.ToString();
+            txtmalsp.Text = datagridview_nguyenlieu.CurrentRow.Cells["maloaisp"].Value.ToString();
+            txttenlsp.Text = datagridview_nguyenlieu.CurrentRow.Cells["tenloaisp"].Value.ToString();
             
             btnsua.Enabled = true;
             btnxoa.Enabled = true;
@@ -250,7 +250,7 @@ namespace ttcn
         private void btnluu_Click(object sender, EventArgs e)
         {
             string sql;
-            sql = "INSERT INTO dbo.loaisanpham (tenloaisp) VALUES (N'" + txttenlsp.Text.Trim() + "')";
+            sql = "INSERT INTO LoaiNL (Tenloai) VALUES (N'" + txttenlsp.Text.Trim() + "')";
 
             if (!Functions.Checkkey(sql))
             {
@@ -275,7 +275,7 @@ namespace ttcn
             if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int maLSP = Convert.ToInt32(txtmalsp.Text.Trim());
-                string sql = "DELETE FROM dbo.loaisanpham WHERE maloaisp = " + maLSP;
+                string sql = "DELETE FROM LoaiNL WHERE Maloai = " + maLSP;
 
                 string connectionString = Functions.Conn.ConnectionString;
 
@@ -306,7 +306,7 @@ namespace ttcn
         private void btnsua_Click(object sender, EventArgs e)
         {
             int maLSP = Convert.ToInt32(txtmalsp.Text.Trim());
-            string sql = "UPDATE dbo.loaisanpham SET tenloaisp = N'" + txttenlsp.Text.Trim() + "' WHERE maloaisp = " + maLSP;
+            string sql = "UPDATE LoaiNL SET Tenloai = N'" + txttenlsp.Text.Trim() + "' WHERE Maloai = " + maLSP;
             string connectionString = Functions.Conn.ConnectionString;
 
             using (SqlConnection connection = new SqlConnection(connectionString))

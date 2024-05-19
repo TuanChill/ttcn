@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -185,8 +186,27 @@ namespace ttcn
             btn_luu.Enabled = true;
             btn_them.Enabled = false;
             ResetValues();
-            txt_manl.Enabled = true;
+          //  txt_manl.Enabled = true;
             txt_manl.Focus();
+            // Lấy mã sản phẩm lớn nhất trong bảng sản phẩm
+            if (Functions.Conn.State == ConnectionState.Closed)
+            {
+                Functions.Conn.Open();
+            }
+            string query = "SELECT MAX(MaNL) FROM Nguyenlieu";
+            SqlCommand command = new SqlCommand(query, Functions.Conn);
+            object result = command.ExecuteScalar();
+            if (result != DBNull.Value)
+            {
+                int maxMLSP = Convert.ToInt32(result);
+                // Tăng mã sản phẩm lên 1 và hiển thị trong txtmasp
+                txt_manl.Text = (maxMLSP + 1).ToString();
+            }
+            else
+            {
+                // Nếu không có sản phẩm nào trong bảng, gán mã sản phẩm mặc định là 1
+                txt_manl.Text = "1";
+            }
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
