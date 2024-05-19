@@ -71,13 +71,15 @@
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip9 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_loainl = new System.Windows.Forms.Button();
+            this.btn_tt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_nguyenlieu)).BeginInit();
             this.SuspendLayout();
             // 
             // pic
             // 
-            this.pic.Location = new System.Drawing.Point(709, 110);
+            this.pic.Location = new System.Drawing.Point(711, 101);
             this.pic.Name = "pic";
             this.pic.Size = new System.Drawing.Size(174, 139);
             this.pic.TabIndex = 86;
@@ -104,7 +106,7 @@
             // 
             // btn_hienthi
             // 
-            this.btn_hienthi.Location = new System.Drawing.Point(625, 590);
+            this.btn_hienthi.Location = new System.Drawing.Point(625, 630);
             this.btn_hienthi.Name = "btn_hienthi";
             this.btn_hienthi.Size = new System.Drawing.Size(92, 41);
             this.btn_hienthi.TabIndex = 83;
@@ -114,7 +116,7 @@
             // 
             // btn_dong
             // 
-            this.btn_dong.Location = new System.Drawing.Point(819, 590);
+            this.btn_dong.Location = new System.Drawing.Point(819, 630);
             this.btn_dong.Name = "btn_dong";
             this.btn_dong.Size = new System.Drawing.Size(92, 41);
             this.btn_dong.TabIndex = 82;
@@ -124,7 +126,7 @@
             // 
             // btn_tk
             // 
-            this.btn_tk.Location = new System.Drawing.Point(527, 590);
+            this.btn_tk.Location = new System.Drawing.Point(527, 630);
             this.btn_tk.Name = "btn_tk";
             this.btn_tk.Size = new System.Drawing.Size(92, 41);
             this.btn_tk.TabIndex = 81;
@@ -134,7 +136,7 @@
             // 
             // btn_boqua
             // 
-            this.btn_boqua.Location = new System.Drawing.Point(429, 590);
+            this.btn_boqua.Location = new System.Drawing.Point(429, 630);
             this.btn_boqua.Name = "btn_boqua";
             this.btn_boqua.Size = new System.Drawing.Size(92, 41);
             this.btn_boqua.TabIndex = 80;
@@ -144,7 +146,7 @@
             // 
             // btn_sua
             // 
-            this.btn_sua.Location = new System.Drawing.Point(223, 590);
+            this.btn_sua.Location = new System.Drawing.Point(223, 630);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(92, 41);
             this.btn_sua.TabIndex = 79;
@@ -154,7 +156,7 @@
             // 
             // btn_luu
             // 
-            this.btn_luu.Location = new System.Drawing.Point(331, 590);
+            this.btn_luu.Location = new System.Drawing.Point(331, 630);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(92, 41);
             this.btn_luu.TabIndex = 78;
@@ -164,7 +166,7 @@
             // 
             // btn_xoa
             // 
-            this.btn_xoa.Location = new System.Drawing.Point(125, 590);
+            this.btn_xoa.Location = new System.Drawing.Point(125, 630);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(92, 41);
             this.btn_xoa.TabIndex = 77;
@@ -174,7 +176,7 @@
             // 
             // btn_them
             // 
-            this.btn_them.Location = new System.Drawing.Point(27, 590);
+            this.btn_them.Location = new System.Drawing.Point(27, 630);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(92, 41);
             this.btn_them.TabIndex = 76;
@@ -188,11 +190,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.datagridview_nguyenlieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridview_nguyenlieu.Location = new System.Drawing.Point(48, 420);
+            this.datagridview_nguyenlieu.Location = new System.Drawing.Point(64, 410);
             this.datagridview_nguyenlieu.Name = "datagridview_nguyenlieu";
             this.datagridview_nguyenlieu.RowHeadersWidth = 51;
             this.datagridview_nguyenlieu.RowTemplate.Height = 24;
-            this.datagridview_nguyenlieu.Size = new System.Drawing.Size(792, 150);
+            this.datagridview_nguyenlieu.Size = new System.Drawing.Size(690, 142);
             this.datagridview_nguyenlieu.TabIndex = 75;
             this.datagridview_nguyenlieu.Click += new System.EventHandler(this.datagridview_nguyenlieu_Click);
             // 
@@ -382,7 +384,7 @@
             // 
             // btn_An
             // 
-            this.btn_An.Location = new System.Drawing.Point(723, 590);
+            this.btn_An.Location = new System.Drawing.Point(723, 630);
             this.btn_An.Name = "btn_An";
             this.btn_An.Size = new System.Drawing.Size(92, 41);
             this.btn_An.TabIndex = 93;
@@ -390,11 +392,33 @@
             this.btn_An.UseVisualStyleBackColor = true;
             this.btn_An.Click += new System.EventHandler(this.btn_An_Click);
             // 
+            // btn_loainl
+            // 
+            this.btn_loainl.Location = new System.Drawing.Point(819, 410);
+            this.btn_loainl.Name = "btn_loainl";
+            this.btn_loainl.Size = new System.Drawing.Size(110, 62);
+            this.btn_loainl.TabIndex = 94;
+            this.btn_loainl.Text = "Loại nguyên liệu";
+            this.btn_loainl.UseVisualStyleBackColor = true;
+            this.btn_loainl.Click += new System.EventHandler(this.btn_loainl_Click);
+            // 
+            // btn_tt
+            // 
+            this.btn_tt.Location = new System.Drawing.Point(819, 490);
+            this.btn_tt.Name = "btn_tt";
+            this.btn_tt.Size = new System.Drawing.Size(110, 62);
+            this.btn_tt.TabIndex = 95;
+            this.btn_tt.Text = "Tình trạng";
+            this.btn_tt.UseVisualStyleBackColor = true;
+            this.btn_tt.Click += new System.EventHandler(this.btn_tt_Click);
+            // 
             // formNL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 665);
+            this.ClientSize = new System.Drawing.Size(923, 683);
+            this.Controls.Add(this.btn_tt);
+            this.Controls.Add(this.btn_loainl);
             this.Controls.Add(this.btn_An);
             this.Controls.Add(this.combo_chinhanh);
             this.Controls.Add(this.lb_macn);
@@ -482,5 +506,7 @@
         private System.Windows.Forms.ToolTip toolTip7;
         private System.Windows.Forms.ToolTip toolTip8;
         private System.Windows.Forms.ToolTip toolTip9;
+        private System.Windows.Forms.Button btn_loainl;
+        private System.Windows.Forms.Button btn_tt;
     }
 }

@@ -172,6 +172,7 @@ namespace ttcn
         {
             if(MessageBox.Show("Bạn có muốn thoát form Nguyên liệu?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
             {
+                this.Close();
                 main main = new main();
                 main.Show();
                 return;
@@ -460,6 +461,18 @@ namespace ttcn
             if (e.KeyCode == Keys.Enter)
                 SendKeys.Send("{TAB}");
 
+        }
+
+        private void btn_loainl_Click(object sender, EventArgs e)
+        {
+            frmloainl loainl = new frmloainl();
+            loainl.ShowDialog();
+        }
+
+        private void btn_tt_Click(object sender, EventArgs e)
+        {
+            frmloainl loainl = new frmloainl();
+            loainl.ShowDialog();
         }
     }
 }

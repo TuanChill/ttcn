@@ -94,7 +94,7 @@ namespace ttcn
         private void Reset()
         {
             DisableButton();
-            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            //panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             
             //btnCloseChildForm.Visible = false;
         }

@@ -368,8 +368,8 @@ namespace ttcn
         {
             if (MessageBox.Show("Bạn có muốn thoát form Nguyên liệu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                main main = new main();
-                main.Show();
+                formNL nl = new formNL();
+                nl.Show();
                 return;
             }
         }
