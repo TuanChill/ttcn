@@ -65,3 +65,6 @@ D:\ttcn\ttcn\obj\Debug\ttcn.pdb
 D:\ttcn\ttcn\obj\Debug\ttcn.PhieuNK.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.csproj.ResolveComReference.cache
 D:\ttcn\ttcn\obj\Debug\ttcn.PNK.resources
+C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\obj\Debug\ttcn.csproj.ResolveComReference.cache
+C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\obj\Debug\ttcn.PhieuNK.resources
+C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\obj\Debug\ttcn.PNK.resources
