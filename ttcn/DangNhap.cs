@@ -50,7 +50,7 @@ namespace ttcn
 
                     if (password == dbPassword)
                     {
-                            MessageBox.Show("Đăng nhập thành công!");
+                            MessageBox.Show("Đăng nhập thành công!","Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
 
                             // Đóng form đăng nhập (frmlogin)
                             this.Hide();

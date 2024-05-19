@@ -29,14 +29,14 @@ namespace ttcn
         {
             Class.Functions.Ketnoi();
             SqlConnection conn = Functions.Conn;
-            string sql = "SELECT MaNV, HoTenNV FROM NhanVien where hoatdong = 1";
-            Functions.Fillcombo(sql, cbonv, "MaNV", "HoTenNV");
-            string sql1 = "SELECT MaSP, TenSP FROM SanPham where matinhtrang <> 3";
-            Functions.Fillcombo(sql1, cbtensp, "MaSP", "TenSP");
+            string sql = "SELECT Manhanvien, Tennhanvien FROM NhanVien ";
+            Functions.Fillcombo(sql, cbonv, "Manhanvien", "Tennhanvien");
+            string sql1 = "SELECT MaNL, TênNL FROM Nguyenlieu where MaTT <> 3";
+            Functions.Fillcombo(sql1, cbtensp, "MaNL", "TenNL");
             string sql2 = "SELECT MaNCC, TenNCC FROM NhaCungCap";
             Functions.Fillcombo(sql2, cboncc, "MaNCC", "TenNCC");
-            string sql3 = "SELECT MaLoaiPhieu, TenLoaiPhieu FROM LoaiPhieu";
-            Functions.Fillcombo(sql3, cboloaiphieu, "MaLoaiPhieu", "TenLoaiPhieu");
+            //string sql3 = "SELECT MaLoaiPhieu, TenLoaiPhieu FROM LoaiPhieu";
+            //Functions.Fillcombo(sql3, cboloaiphieu, "MaLoaiPhieu", "TenLoaiPhieu");
             txtsl.Text = "0";
             LoadGiaSanPham();
             txtck.Text = "0";
@@ -85,14 +85,14 @@ namespace ttcn
                 // Nếu giá trị mã sản phẩm không hợp lệ, đặt giá trị mặc định là 0
                 txtgia.Text = "0";
             }*/
-            if (int.TryParse(txtmasp.Text, out int maSanPham))
+            if (int.TryParse(txtmasp.Text, out int maNl))
             {
-                string sql = "SELECT gia FROM SanPham WHERE masp = " + maSanPham;
+                string sql = "SELECT gia FROM Nguyenlieu WHERE masp = " + maNl;
                 System.Data.DataTable dt = Functions.GetdataToTable(sql);
 
                 if (dt.Rows.Count > 0)
                 {
-                    decimal gia = Convert.ToDecimal(dt.Rows[0]["gia"]);
+                    decimal gia = Convert.ToDecimal(dt.Rows[0]["Gia"]);
                     txtgia.Text = gia.ToString();
                 }
                 else
@@ -207,14 +207,19 @@ namespace ttcn
         }
         private void Loaddata()
         {
-            string sql = "SELECT a.MaPhieuNhap, b. TenSP, c.NgayTao, a.SoLuong, a.DonGia " +
-                 "FROM ChiTietPhieuNhaptam AS a " +
-                 "JOIN SanPham AS b ON a.MaSP = b.MaSP " +
-                 "JOIN PhieuNhaptam AS c ON a.MaPhieuNhap = c.MaPhieuNhap " +
-                 "WHERE a.MaPhieuNhap = N'" + txtMaPhieuNhap.Text + "' ORDER BY a.Maphieunhap DESC";
-
+            //string sql = "SELECT a.MaPhieuNK, b. TenNL, c.NgayTao, a.SoLuong, a.DonGia " +
+            //     "FROM ChiTietPhieuNhap AS a " +
+            //     "JOIN Nguyenlieu AS b ON a.MaNL = b.MaNL " +
+            //     "JOIN PhieuNhaptam AS c ON a.MaPhieuNhap = c.MaPhieuNhap " +
+            //     "WHERE a.MaPhieuNhap = N'" + txtMaPhieuNhap.Text + "' ORDER BY a.Maphieunhap DESC";
+            string sql = "SELECT a.MaPhieuNK, b. TenNL, c.NgayTao, a.SoLuong, a.thanhtien " +
+                "FROM Chitietphieunhapkho AS a " +
+                "JOIN Nguyenlieu AS b ON a.MaNL = b.MaNL "+
+               // +"JOIN PhieuNhaptam AS c ON a.MaPhieuNK = c.MaPhieuNK " +
+              //  "WHERE a.MaPhieuNK = N'" + txtMaPhieuNhap.Text +
+              "' ORDER BY a.MaPhieuNK DESC";
             // Lấy dữ liệu từ CSDL và gán vào DataTable
-           System.Data.DataTable dataTable = Class.Functions.GetdataToTable(sql);
+            System.Data.DataTable dataTable = Class.Functions.GetdataToTable(sql);
 
             // Gán DataTable cho DataGridView để hiển thị dữ liệu
             dtgphieunhapkho.DataSource = dataTable;
@@ -242,29 +247,31 @@ namespace ttcn
         private void btnthemsanpham_Click(object sender, EventArgs e)
         {
             
-                string sqlCheck = "SELECT * FROM PhieuNhaptam WHERE MaPhieuNhap = N'" + txtMaPhieuNhap.Text.Trim() + "'";
+                string sqlCheck = "SELECT * FROM Phieunhapkho WHERE MaPhieuNK = N'" + txtMaPhieuNhap.Text.Trim() + "'";
+            //string sqlCheck = "SELECT * FROM PhieuNhaptam WHERE MaPhieuNhap = N'" + txtMaPhieuNhap.Text.Trim() + "'";
                System.Data.DataTable dt = Functions.GetdataToTable(sqlCheck);
 
             if (dt.Rows.Count > 0)
             {
 
                 // Mã phiếu nhập đã tồn tại
-                // Kiểm tra mã sản phẩm trong bảng ChiTietPhieuNhaptam
-                string sqlCheckSP = "SELECT * FROM ChiTietPhieuNhaptam WHERE MaPhieuNhap = N'" + txtMaPhieuNhap.Text.Trim() + "' AND MaSP = '" + txtmasp.Text.Trim() + "'";
+                // Kiểm tra mã sản phẩm trong bảng PhieuNhap
+                string sqlCheckSP = "SELECT * FROM Chitietphieunhapkho WHERE MaPhieuNK = N'" + txtMaPhieuNhap.Text.Trim() + "' AND MaNL = '" + txtmasp.Text.Trim() + "'";
                System.Data.DataTable dtSP = Functions.GetdataToTable(sqlCheckSP);
 
                 if (dtSP.Rows.Count > 0)
                 {
-                    // Mã sản phẩm đã tồn tại trong ChiTietPhieuNhaptam
+                    // Mã sản phẩm đã tồn tại trong ChiTietPhieuNhap
                     // Thực hiện cập nhật số lượng và thành tiền
-                    string sqlUpdate = "UPDATE ChiTietPhieuNhaptam SET SoLuong = SoLuong + " + txtsl.Text.Trim() + ", DonGia = DonGia + " + txtthanhtien.Text.Trim() + " WHERE MaPhieuNhap = N'" + txtMaPhieuNhap.Text.Trim() + "' AND MaSP = '" + txtmasp.Text.Trim() + "'";
+                    string sqlUpdate = "UPDATE Chitietphieunhapkho SET SoLuong = SoLuong + " + txtsl.Text.Trim() + ", thanhtien = thanhtien + " + txtthanhtien.Text.Trim() + " WHERE MaPhieuNK = N'" + txtMaPhieuNhap.Text.Trim() + "' AND MaNL = '" + txtmasp.Text.Trim() + "'";
+                    //   string sqlUpdate = "UPDATE Chitietphieunhapkho SET SoLuong = SoLuong + " + txtsl.Text.Trim() + ", DonGia = DonGia + " + txtthanhtien.Text.Trim() + " WHERE MaPhieuNhap = N'" + txtMaPhieuNhap.Text.Trim() + "' AND MaSP = '" + txtmasp.Text.Trim() + "'";
                     Functions.RunSQL(sqlUpdate);
                 }
                 else
                 {
-                    // Mã sản phẩm chưa tồn tại trong ChiTietPhieuNhaptam
+                    // Mã sản phẩm chưa tồn tại trong ChiTietPhieuNhap
                     // Thực hiện chèn mới
-                    string sql = "INSERT INTO ChiTietPhieuNhaptam (MaPhieuNhap, MaSP, SoLuong, DonGia) VALUES (" +
+                    string sql = "INSERT INTO Chitietphieunhapkho (MaPhieuNK, MaNL, SoLuong, thanhtien) VALUES (" +
                         "N'" + txtMaPhieuNhap.Text.Trim() + "'," +
                         "'" + txtmasp.Text.Trim() + "'," +
                         "'" + txtsl.Text.Trim() + "'," +
@@ -275,17 +282,17 @@ namespace ttcn
             else
             {
                 int maNV = Convert.ToInt32(cbonv.SelectedValue);
-                int maNCC = Convert.ToInt32(cboncc.SelectedValue);
+                int MaNCC = Convert.ToInt32(cboncc.SelectedValue);
                 int maLoaiPhieu = Convert.ToInt32(cboloaiphieu.SelectedValue);
 
-                string sqlPhieuNhap = "INSERT INTO PhieuNhaptam (MaPhieuNhap, MaNV, MaNCC, MaLoaiPhieu) VALUES (" +
-                    "N'" + txtMaPhieuNhap.Text.Trim() + "'," +
-                    "'" + maNV + "'," +
-                    "'" + maNCC + "'," +
-                    "'" + maLoaiPhieu + "')";
-                Functions.RunSQL(sqlPhieuNhap);
+                //string sqlPhieuNhap = "INSERT INTO PhieuNhaptam (MaPhieuNhap, Manhanvien, MaNCC, MaLoaiPhieu) VALUES (" +
+                //    "N'" + txtMaPhieuNhap.Text.Trim() + "'," +
+                //    "'" + maNV + "'," +
+                //    "'" + MaNCC + "'," +
+                //    "'" + maLoaiPhieu + "')";
+                //Functions.RunSQL(sqlPhieuNhap);
 
-                string sql = "INSERT INTO ChiTietPhieuNhaptam (MaPhieuNhap, MaSP, SoLuong, DonGia) VALUES (" +
+                string sql = "INSERT INTO Chitietphieunhapkho (MaPhieuNK, MaNL, SoLuong, thanhtien) VALUES (" +
                     "N'" + txtMaPhieuNhap.Text.Trim() + "'," +
                     "'" + txtmasp.Text.Trim() + "'," +
                     "'" + txtsl.Text.Trim() + "'," +
@@ -300,13 +307,13 @@ namespace ttcn
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            // Xóa dữ liệu trong bảng ChiTietPhieuNhapTam
-            string sqlDeleteChiTiet = "DELETE FROM ChiTietPhieuNhapTam ";
-            Functions.RunSQL(sqlDeleteChiTiet);
+            //// Xóa dữ liệu trong bảng ChiTietPhieuNhap
+            //string sqlDeleteChiTiet = "DELETE FROM ChiTietPhieuNhap ";
+            //Functions.RunSQL(sqlDeleteChiTiet);
 
-            // Xóa dữ liệu trong bảng PhieuNhapTam
-            string sqlDeletePhieuNhap = "DELETE FROM PhieuNhapTam";
-            Functions.RunSQL(sqlDeletePhieuNhap);
+            //// Xóa dữ liệu trong bảng PhieuNhapTam
+            //string sqlDeletePhieuNhap = "DELETE FROM PhieuNhapTam";
+            //Functions.RunSQL(sqlDeletePhieuNhap);
 
             // Xóa dữ liệu trong các TextBox và ComboBox
             
@@ -321,31 +328,36 @@ namespace ttcn
 
             // Kiểm tra xem phiếu nhập tạm có tồn tại không
             string sqlCheck = "SELECT * FROM PhieuNhaptam WHERE MaPhieuNhap = N'" + txtMaPhieuNhap.Text.Trim() + "'";
-           System.Data.DataTable dt = Functions.GetdataToTable(sqlCheck);
+            System.Data.DataTable dt = Functions.GetdataToTable(sqlCheck);
 
             if (dt.Rows.Count > 0)
             {
                 // Sao chép dữ liệu từ bảng PhieuNhaptam sang bảng PhieuNhap
-                string sqlCopyPhieuNhap = "INSERT INTO PhieuNhap (MaPhieuNhap, MaNV, MaNCC, MaLoaiPhieu) " +
-                    "SELECT MaPhieuNhap, MaNV, MaNCC, MaLoaiPhieu FROM PhieuNhaptam";
+                //string sqlCopyPhieuNhap = "INSERT INTO PhieuNhap (MaPhieuNhap, MaNV, MaNCC, MaLoaiPhieu) " +
+                //    "SELECT MaPhieuNhap, MaNV, MaNCC, MaLoaiPhieu FROM PhieuNhaptam";
+                string sqlCopyPhieuNhap = "INSERT INTO Phieunhapkho (MaPhieuNK, Manhanvien, MaNCC, MaLoaiPhieu) ";
                 Functions.RunSQL(sqlCopyPhieuNhap);
 
-                // Sao chép dữ liệu từ bảng ChiTietPhieuNhaptam sang bảng ChiTietPhieuNhap
-                string sqlCopyChiTietPhieuNhap = "INSERT INTO ChiTietPhieuNhap (MaPhieuNhap, MaSP, SoLuong, DonGia) " +
-                    "SELECT MaPhieuNhap, MaSP, SoLuong, DonGia FROM ChiTietPhieuNhaptam";
+                // Sao chép dữ liệu từ bảng ChiTietPhieuNhap sang bảng ChiTietPhieuNhap
+                //string sqlCopyChiTietPhieuNhap = "INSERT INTO ChiTietPhieuNhap (MaPhieuNhap, MaSP, SoLuong, DonGia) " +
+                //    "SELECT MaPhieuNhap, MaSP, SoLuong, DonGia FROM ChiTietPhieuNhap";
+                string sqlCopyChiTietPhieuNhap = "INSERT INTO Chitietphieunhapkho (MaPhieuNK, MaNL, SoLuong, thanhtien) " +
+                    "SELECT MaPhieuNK, MaNL, SoLuong, thanhtien FROM ChitietphieunhapFkho";
                 Functions.RunSQL(sqlCopyChiTietPhieuNhap);
 
                 // Cập nhật cột TongTien trong bảng PhieuNhap
-                string sqlUpdateTongTien = "UPDATE PhieuNhap SET TongTien = " +
-                    "(SELECT SUM(Dongia) FROM ChiTietPhieuNhap WHERE MaPhieuNhap = N'" + txtMaPhieuNhap.Text.Trim() + "') where MaPhieuNhap = N'" + txtMaPhieuNhap.Text.Trim() + "' ";
+                //string sqlUpdateTongTien = "UPDATE PhieuNhap SET TongTien = " +
+                //    "(SELECT SUM(Dongia) FROM ChiTietPhieuNhap WHERE MaPhieuNhap = N'" + txtMaPhieuNhap.Text.Trim() + "') where MaPhieuNhap = N'" + txtMaPhieuNhap.Text.Trim() + "' ";
+                string sqlUpdateTongTien = "UPDATE Phieunhapkho SET tongsotien = " +
+                     "(SELECT SUM(thanhtien) FROM Chitietphieunhapkho WHERE MaPhieuNK = N'" + txtMaPhieuNhap.Text.Trim() + "') where MaPhieuNK = N'" + txtMaPhieuNhap.Text.Trim() + "' ";
                 Functions.RunSQL(sqlUpdateTongTien);
-                // Xóa dữ liệu trong bảng ChiTietPhieuNhaptam
-                string sqlDeleteChiTietPhieuNhapTam = "DELETE FROM ChiTietPhieuNhaptam ";
-                Functions.RunSQL(sqlDeleteChiTietPhieuNhapTam);
+                // Xóa dữ liệu trong bảng ChiTietPhieuNhap
+                string sqlDeleteChiTietPhieuNhap = "DELETE FROM Chitietphieunhapkho ";
+                Functions.RunSQL(sqlDeleteChiTietPhieuNhap);
 
                 // Xóa dữ liệu trong bảng PhieuNhaptam
-                string sqlDeletePhieuNhapTam = "DELETE FROM PhieuNhaptam";
-                Functions.RunSQL(sqlDeletePhieuNhapTam);
+                //string sqlDeletePhieuNhapTam = "DELETE FROM PhieuNhaptam";
+                //Functions.RunSQL(sqlDeletePhieuNhapTam);
 
                 
 
@@ -361,8 +373,9 @@ namespace ttcn
         private void loadtongtien()
         {
             // Tính tổng đơn giá
-            string sqlSum = "SELECT SUM(DonGia) FROM ChiTietPhieuNhaptam";
-           System.Data.DataTable dtSum = Functions.GetdataToTable(sqlSum);
+            string sqlSum = "SELECT SUM(thanhtien) FROM Chitietphieunhapkho";
+            // string sqlSum = "SELECT SUM(DonGia) FROM ChiTietPhieuNhap";
+            System.Data.DataTable dtSum = Functions.GetdataToTable(sqlSum);
             float tongTien = 0;
             if (dtSum.Rows.Count > 0 && dtSum.Rows[0][0] != DBNull.Value)
             {
@@ -374,7 +387,8 @@ namespace ttcn
         }
         private void dataload()
         {
-            string sql = "SELECT a.MaPhieuNhap, b.HoTenNV,  a.NgayTao,  a.Tongtien, c.Tenncc, d. tenloaiphieu FROM  PhieuNhap a  JOIN NhanVien b ON a.MaNV = b.MaNV join nhacungcap c on a.mancc = c.mancc join loaiphieu d on a.maloaiphieu = d.maloaiphieu ORDER BY a.Maphieunhap DESC";
+            // string sql = "SELECT a.MaPhieuNK, b.HoTenNV,  a.NgayTao,  a.Tongtien, c.Tenncc, d. tenloaiphieu FROM  Phieunhapkho a  JOIN NhanVien b ON a.Manhanvien = b.Manhanvien join NhaCungCap c on a.MaNCC = c.MaNCC join loaiphieu d on a.maloaiphieu = d.maloaiphieu ORDER BY a.Maphieunhap DESC";
+            string sql = "SELECT a.MaPhieuNK, b.Tennhanvien,  a.NgayTao,  a.tongsotien, c.TenNCC, a.loainhap FROM  Phieunhapkho a  JOIN NhanVien b ON a.Manhanvien = b.Manhanvien join NhaCungCap c on a.MaNCC = c.MaNCC ORDER BY a.MaPhieuNK DESC";
                 
 
             // Lấy dữ liệu từ CSDL và gán vào DataTable
@@ -413,12 +427,12 @@ namespace ttcn
         }
         private string GetMaSPFromTenSP(string tenSP)
         {
-            string sql = "SELECT MaSP FROM SanPham WHERE TenSP = N'" + tenSP + "'";
+            string sql = "SELECT MaNL FROM Nguyenlieu WHERE TenNL = N'" + tenSP + "'";
            System.Data.DataTable dt = Functions.GetdataToTable(sql);
 
             if (dt.Rows.Count > 0)
             {
-                return dt.Rows[0]["MaSP"].ToString();
+                return dt.Rows[0]["MaNL"].ToString();
             }
 
             return null; // Trả về null nếu không tìm thấy mã sản phẩm
@@ -431,15 +445,15 @@ namespace ttcn
                 // Lấy mã sản phẩm và mã phiếu nhập từ dòng được nhấp đúp chuột
                 if (e.RowIndex >= 0)
                 {
-                    string tenSP = dtgphieunhapkho.Rows[e.RowIndex].Cells["TenSP"].Value.ToString();
+                    string tenSP = dtgphieunhapkho.Rows[e.RowIndex].Cells["TenNL"].Value.ToString();
                     string maSP = GetMaSPFromTenSP(tenSP);
 
                     if (maSP != null)
                     {
                         // Xóa dòng dữ liệu dựa trên mã sản phẩm và mã phiếu nhập
-                        string maPhieuNhap = dtgphieunhapkho.Rows[e.RowIndex].Cells["maphieunhap"].Value.ToString();
+                        string maPhieuNhap = dtgphieunhapkho.Rows[e.RowIndex].Cells["MaPhieuNK"].Value.ToString();
 
-                        string sqlDelete = "DELETE FROM ChiTietPhieuNhaptam WHERE MaPhieuNhap = N'" + maPhieuNhap + "' AND MaSP = N'" + maSP + "'";
+                        string sqlDelete = "DELETE FROM ChiTietPhieunhapkho WHERE MaPhieuNK = N'" + maPhieuNhap + "' AND MaNL = N'" + maSP + "'";
                         Functions.RunSQL(sqlDelete);
 
                         // Refresh lại DataGridView sau khi xóa dòng dữ liệu
@@ -466,7 +480,7 @@ namespace ttcn
             if (e.RowIndex >= 0) // Kiểm tra chỉ số hàng hợp lệ
             {
                 DataGridViewRow row = dtgphieunhapkho.Rows[e.RowIndex];
-                string maPhieuNhap = row.Cells["MaPhieuNhap"].Value.ToString();
+                string maPhieuNhap = row.Cells["MaPhieuNK"].Value.ToString();
 
                 // Điền mã phiếu nhập vào txtmaphieunhap
                 txtMaPhieuNhap.Text = maPhieuNhap;

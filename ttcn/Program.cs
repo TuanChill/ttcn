@@ -16,7 +16,8 @@ namespace ttcn
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmchinhanh());
+          // Application.Run(new DangNhap());
+            Application.Run(new PNK());
         }
     }
 }
