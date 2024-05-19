@@ -18,29 +18,34 @@ namespace ttcn
         {
             InitializeComponent();
         }
-
+        DataTable dt;
         private void FormTinhTrang_Load(object sender, EventArgs e)
         {
             Functions.Ketnoi();
 
             SqlConnection conn = Functions.Conn;
             string sql;
-            sql = "select matinhtrang, tentinhtrang from dbo.tinhtrang";
-            DataTable a = Functions.GetdataToTable(sql);
-            dgtt.DataSource = a;
+            sql = "select MaTT, mucdo from Tinhtrang";
+            
+           
+            dt = Functions.GetdataToTable(sql);
+            datagridview_tinhtrang.DataSource = dt;
 
-            dgtt.Columns[0].HeaderText = "Mã tình trạng";
-            dgtt.Columns[1].HeaderText = "Tên tình trạng";
+            datagridview_tinhtrang.Columns[0].HeaderText = "Mã tình trạng";
+            datagridview_tinhtrang.Columns[1].HeaderText = "Mức độ";
 
+            datagridview_tinhtrang.Columns[0].Width = 100;
+            datagridview_tinhtrang.Columns[1].Width = 300;
 
-            dgtt.AllowUserToAddRows = false;
-            dgtt.EditMode = DataGridViewEditMode.EditProgrammatically;
+            txtmatt.Enabled= false;
+            datagridview_tinhtrang.AllowUserToAddRows = false;
+            datagridview_tinhtrang.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         private void dgtt_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtmatt.Text = dgtt.CurrentRow.Cells["matinhtrang"].Value.ToString();
-            txttentt.Text = dgtt.CurrentRow.Cells["tentinhtrang"].Value.ToString();
+            txtmatt.Text = datagridview_tinhtrang.CurrentRow.Cells["MaTT"].Value.ToString();
+            txttentt.Text = datagridview_tinhtrang.CurrentRow.Cells["mucdo"].Value.ToString();
             btnsua.Enabled = true;
             btnxoa.Enabled = true;
             btnHuy.Enabled = true;
@@ -49,15 +54,15 @@ namespace ttcn
         {
             SqlConnection conn = Functions.Conn;
             string sql;
-            sql = "select matinhtrang, tentinhtrang from dbo.tinhtrang";
+            sql = "select MaTT, mucdo from Tinhtrang";
             DataTable a = Functions.GetdataToTable(sql);
-            dgtt.DataSource = a;
+            datagridview_tinhtrang.DataSource = a;
         }
 
         private void btnsua_Click(object sender, EventArgs e)
         {
             int maTT = Convert.ToInt32(txtmatt.Text.Trim());
-            string sql = "UPDATE dbo.tinhtrang SET tentinhtrang = N'" + txttentt.Text.Trim() + "' WHERE matinhtrang = " + maTT;
+            string sql = "UPDATE Tinhtrang SET mucdo = N'" + txttentt.Text.Trim() + "' WHERE MaTT = " + maTT;
             string connectionString = Functions.Conn.ConnectionString;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -85,35 +90,55 @@ namespace ttcn
 
         private void btnxoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //{
+            //    int maTT = Convert.ToInt32(txtmatt.Text.Trim());
+            //    string sql = "DELETE FROM Tinhtrang WHERE MaTT = " + maTT;
+
+            //    string connectionString = Functions.Conn.ConnectionString;
+
+            //    using (SqlConnection connection = new SqlConnection(connectionString))
+            //    {
+            //        connection.Open();
+
+            //        using (SqlCommand command = new SqlCommand(sql, connection))
+            //        {
+            //            int rowsAffected = command.ExecuteNonQuery();
+
+            //            if (rowsAffected > 0)
+            //            {
+            //                txttentt.Text = "";
+            //                txttentt.Focus();
+            //                MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //                loaddata();
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("Xóa dữ liệu không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //            }
+            //        }
+            //    }
+            //}
+            string sql;
+            
+            if (dt.Rows.Count == 0)
             {
-                int maTT = Convert.ToInt32(txtmatt.Text.Trim());
-                string sql = "DELETE FROM dbo.tinhtrang WHERE matinhtrang = " + maTT;
-
-                string connectionString = Functions.Conn.ConnectionString;
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            txttentt.Text = "";
-                            txttentt.Focus();
-                            MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            loaddata();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Xóa dữ liệu không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                }
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                return;
             }
+            if (txtmatt.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo",MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo",MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                sql = "DELETE Tinhtrang WHERE MaTT=N'" + txtmatt.Text + "'";
+                Class.Functions.RunSqlDel(sql);
+                loaddata();
+                resetvalue();
+            }
+
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -130,7 +155,7 @@ namespace ttcn
             {
                 Functions.Conn.Open();
             }
-            string query = "SELECT MAX(MATINHTRANG) FROM TINHTRANG";
+            string query = "SELECT MAX(MaTT) FROM Tinhtrang";
             SqlCommand command = new SqlCommand(query, Functions.Conn);
             object result = command.ExecuteScalar();
             if (result != DBNull.Value)
@@ -148,23 +173,40 @@ namespace ttcn
         private void btnluu_Click(object sender, EventArgs e)
         {
             string sql;
-            sql = "INSERT INTO dbo.tinhtrang (tentinhtrang) VALUES (N'" + txttentt.Text.Trim() + "')";
-
-            if (!Functions.Checkkey(sql))
+            if (txtmatt.Text == "")
             {
-                // Thực hiện câu lệnh INSERT khi không có trùng khóa
-                // ...
-
-                txttentt.Text = "";
+                MessageBox.Show("Bạn phải nhập mã tình trạng", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                txtmatt.Focus();
+                return;
+            }
+            if (txttentt.Text == "")
+            {
+                MessageBox.Show("Bạn phải nhập mức độ tình trạng", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 txttentt.Focus();
-                MessageBox.Show("Thêm dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            else
+
+
+
+            sql = "SELECT MaTT FROM Tinhtrang WHERE MaTT=N'" + txtmatt.Text.Trim() + "'";
+            if (Functions.Checkkey(sql))
             {
-                MessageBox.Show("Trùng khóa! Dữ liệu đã tồn tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mã tình trạng này đã tồn, vui lòng nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtmatt.Focus();
+                txtmatt.Text = "";
+                return;
             }
+            sql = "INSERT INTO Tinhtrang (MaTT, mucdo) " + "VALUES (N'" + txtmatt.Text.Trim() + "', N'" + txttentt.Text.Trim() + "')";
 
 
+            Functions.Runsql(sql);
+            loaddata();
+            resetvalue();
+            btnxoa.Enabled = true;
+            btnthem.Enabled = true;
+            btnsua.Enabled = true;
+            btnluu.Enabled = false;
+            txtmatt.Enabled = false;
             loaddata();
         }
 
@@ -186,9 +228,12 @@ namespace ttcn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Bạn có muốn thoát form Nguyên liệu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                main main = new main();
+                main.Show();
+                return;
+            }
         }
-
-        
     }
 }

@@ -94,7 +94,7 @@ namespace ttcn
         private void Reset()
         {
             DisableButton();
-            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            //panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             
             //btnCloseChildForm.Visible = false;
         }
@@ -134,7 +134,7 @@ namespace ttcn
 
         private void btnOrders_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new frmsanpham(), sender);
+            OpenChildForm(new formNL(), sender);
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
@@ -209,7 +209,7 @@ namespace ttcn
 
         private void button4_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmLoaisanpham(), sender);
+            OpenChildForm(new frmloainl(), sender);
         }
 
         private void button4_Click_1(object sender, EventArgs e)
@@ -247,6 +247,11 @@ namespace ttcn
             this.Hide();
             frmlogin a = new frmlogin();
             a.Show();
+        }
+
+        private void button4_ClientSizeChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

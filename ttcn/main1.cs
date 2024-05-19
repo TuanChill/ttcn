@@ -95,7 +95,7 @@ namespace ttcn
 
         private void btnsanpham_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmsanpham(), sender);
+            OpenChildForm(new formNL(), sender);
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
@@ -147,7 +147,7 @@ namespace ttcn
 
         private void btnsanpham_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new frmsanpham(), sender);
+            OpenChildForm(new formNL(), sender);
         }
 
         private void frmtrangchu_FormClosed_1(object sender, FormClosedEventArgs e)

@@ -46,11 +46,9 @@ D:\ttcn\ttcn\obj\Debug\ttcn.FormTinhTrang.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.Globals.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmdanhsach.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmdondathang.resources
-D:\ttcn\ttcn\obj\Debug\ttcn.frmLoaisanpham.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmmoi.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmphieuthuhoi.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmphieuxuatkho.resources
-D:\ttcn\ttcn\obj\Debug\ttcn.frmsanpham.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmtimkiem.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.Hang.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.main.resources
@@ -65,6 +63,11 @@ D:\ttcn\ttcn\obj\Debug\ttcn.pdb
 D:\ttcn\ttcn\obj\Debug\ttcn.PhieuNK.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.csproj.ResolveComReference.cache
 D:\ttcn\ttcn\obj\Debug\ttcn.PNK.resources
+<<<<<<< HEAD
 C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\obj\Debug\ttcn.csproj.ResolveComReference.cache
 C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\obj\Debug\ttcn.PhieuNK.resources
 C:\Users\tuanchill\Downloads\ttcn\ttcn\ttcn\obj\Debug\ttcn.PNK.resources
+=======
+D:\ttcn\ttcn\obj\Debug\ttcn.formNL.resources
+D:\ttcn\ttcn\obj\Debug\ttcn.frmloainl.resources
+>>>>>>> 3aaad5ec12fdfd0a73bda7772401cc474ec906f4
