@@ -67,3 +67,4 @@ D:\ttcn\ttcn\obj\Debug\ttcn.csproj.ResolveComReference.cache
 D:\ttcn\ttcn\obj\Debug\ttcn.PNK.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.formNL.resources
 D:\ttcn\ttcn\obj\Debug\ttcn.frmloainl.resources
+D:\ttcn\ttcn\obj\Debug\ttcn.khachHang.resources

@@ -149,7 +149,7 @@ namespace ttcn
 
         private void btnNotifications_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Hang(), sender);
+            OpenChildForm(new khachHang(), sender);
         }
        
         private void panelTitleBar_Paint(object sender, PaintEventArgs e)
@@ -245,13 +245,8 @@ namespace ttcn
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmlogin a = new frmlogin();
+            DangNhap a = new DangNhap();
             a.Show();
-        }
-
-        private void button4_ClientSizeChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

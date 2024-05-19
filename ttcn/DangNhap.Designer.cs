@@ -58,6 +58,7 @@
             this.userName.Name = "userName";
             this.userName.Size = new System.Drawing.Size(179, 22);
             this.userName.TabIndex = 3;
+            this.userName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.userName_KeyUp);
             // 
             // Password
             // 

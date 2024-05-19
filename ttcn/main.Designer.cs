@@ -42,6 +42,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnNotifications = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelDesktopPane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -54,6 +55,7 @@
             this.panelMenu.Controls.Add(this.button4);
             this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.button2);
+            this.panelMenu.Controls.Add(this.btnNotifications);
             this.panelMenu.Controls.Add(this.btnReport);
             this.panelMenu.Controls.Add(this.btnCustomers);
             this.panelMenu.Controls.Add(this.btnsanpham);
@@ -72,7 +74,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 511);
+            this.button5.Location = new System.Drawing.Point(0, 584);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(219, 73);
@@ -88,14 +90,13 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 438);
+            this.button4.Location = new System.Drawing.Point(0, 511);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(219, 73);
             this.button4.TabIndex = 9;
             this.button4.Text = "Chức vụ";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.ClientSizeChanged += new System.EventHandler(this.button4_ClientSizeChanged);
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // button3
@@ -105,7 +106,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 365);
+            this.button3.Location = new System.Drawing.Point(0, 438);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(219, 73);
@@ -121,7 +122,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 292);
+            this.button2.Location = new System.Drawing.Point(0, 365);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(219, 73);
@@ -229,6 +230,22 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // btnNotifications
+            // 
+            this.btnNotifications.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNotifications.FlatAppearance.BorderSize = 0;
+            this.btnNotifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotifications.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNotifications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotifications.Location = new System.Drawing.Point(0, 292);
+            this.btnNotifications.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNotifications.Name = "btnNotifications";
+            this.btnNotifications.Size = new System.Drawing.Size(219, 73);
+            this.btnNotifications.TabIndex = 6;
+            this.btnNotifications.Text = "Khách hàng";
+            this.btnNotifications.UseVisualStyleBackColor = true;
+            this.btnNotifications.Click += new System.EventHandler(this.btnNotifications_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -266,5 +283,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnNotifications;
     }
 }
