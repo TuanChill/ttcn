@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pic = new System.Windows.Forms.PictureBox();
             this.txt_ghichu = new System.Windows.Forms.TextBox();
             this.combo_maloai = new System.Windows.Forms.ComboBox();
@@ -61,6 +62,15 @@
             this.combo_chinhanh = new System.Windows.Forms.ComboBox();
             this.lb_macn = new System.Windows.Forms.Label();
             this.btn_An = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip9 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_nguyenlieu)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +90,7 @@
             this.txt_ghichu.Name = "txt_ghichu";
             this.txt_ghichu.Size = new System.Drawing.Size(292, 100);
             this.txt_ghichu.TabIndex = 85;
+            this.toolTip9.SetToolTip(this.txt_ghichu, "Hãy nhập vào trường này");
             // 
             // combo_maloai
             // 
@@ -88,6 +99,8 @@
             this.combo_maloai.Name = "combo_maloai";
             this.combo_maloai.Size = new System.Drawing.Size(134, 24);
             this.combo_maloai.TabIndex = 84;
+            this.toolTip3.SetToolTip(this.combo_maloai, "Vui lòng chọn mã loại");
+            this.combo_maloai.KeyUp += new System.Windows.Forms.KeyEventHandler(this.combo_maloai_KeyUp);
             // 
             // btn_hienthi
             // 
@@ -206,6 +219,8 @@
             this.txt_gia.Name = "txt_gia";
             this.txt_gia.Size = new System.Drawing.Size(134, 22);
             this.txt_gia.TabIndex = 71;
+            this.toolTip5.SetToolTip(this.txt_gia, "Hãy nhập vào trường này");
+            this.txt_gia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_gia_KeyUp);
             // 
             // txt_sl
             // 
@@ -213,6 +228,8 @@
             this.txt_sl.Name = "txt_sl";
             this.txt_sl.Size = new System.Drawing.Size(134, 22);
             this.txt_sl.TabIndex = 70;
+            this.toolTip4.SetToolTip(this.txt_sl, "Hãy nhập vào trường này");
+            this.txt_sl.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_sl_KeyUp);
             // 
             // txt_ten
             // 
@@ -220,6 +237,8 @@
             this.txt_ten.Name = "txt_ten";
             this.txt_ten.Size = new System.Drawing.Size(134, 22);
             this.txt_ten.TabIndex = 69;
+            this.toolTip2.SetToolTip(this.txt_ten, "Hãy nhập vào trường này");
+            this.txt_ten.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_ten_KeyUp);
             // 
             // txt_manl
             // 
@@ -227,6 +246,8 @@
             this.txt_manl.Name = "txt_manl";
             this.txt_manl.Size = new System.Drawing.Size(134, 22);
             this.txt_manl.TabIndex = 68;
+            this.toolTip1.SetToolTip(this.txt_manl, "Hãy nhập vào trường này");
+            this.txt_manl.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_manl_KeyUp);
             // 
             // lb_gchu
             // 
@@ -310,6 +331,8 @@
             this.combo_mancc.Name = "combo_mancc";
             this.combo_mancc.Size = new System.Drawing.Size(134, 24);
             this.combo_mancc.TabIndex = 88;
+            this.toolTip6.SetToolTip(this.combo_mancc, "Vui lòng chọn nhà cung cấp");
+            this.combo_mancc.KeyUp += new System.Windows.Forms.KeyEventHandler(this.combo_mancc_KeyUp);
             // 
             // lb_mancc
             // 
@@ -327,6 +350,8 @@
             this.combo_matt.Name = "combo_matt";
             this.combo_matt.Size = new System.Drawing.Size(134, 24);
             this.combo_matt.TabIndex = 90;
+            this.toolTip8.SetToolTip(this.combo_matt, "Vui lòng chọn mã tình trạng");
+            this.combo_matt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.combo_matt_KeyUp);
             // 
             // lb_matt
             // 
@@ -344,6 +369,7 @@
             this.combo_chinhanh.Name = "combo_chinhanh";
             this.combo_chinhanh.Size = new System.Drawing.Size(134, 24);
             this.combo_chinhanh.TabIndex = 92;
+            this.toolTip8.SetToolTip(this.combo_chinhanh, "Vui lòng chọn mã chi nhánh");
             // 
             // lb_macn
             // 
@@ -447,5 +473,14 @@
         private System.Windows.Forms.ComboBox combo_chinhanh;
         private System.Windows.Forms.Label lb_macn;
         private System.Windows.Forms.Button btn_An;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip5;
+        private System.Windows.Forms.ToolTip toolTip4;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip6;
+        private System.Windows.Forms.ToolTip toolTip7;
+        private System.Windows.Forms.ToolTip toolTip8;
+        private System.Windows.Forms.ToolTip toolTip9;
     }
 }
