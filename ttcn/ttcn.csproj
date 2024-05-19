@@ -158,12 +158,6 @@
     <Compile Include="frmphieuxuatkho.Designer.cs">
       <DependentUpon>frmphieuxuatkho.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmsanpham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmsanpham.Designer.cs">
-      <DependentUpon>frmsanpham.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmtimkiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +182,12 @@
     </Compile>
     <Compile Include="main1.Designer.cs">
       <DependentUpon>main1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NLcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NLcs.Designer.cs">
+      <DependentUpon>NLcs.cs</DependentUpon>
     </Compile>
     <Compile Include="PhieuNhapHang.cs" />
     <Compile Include="phieunhapkho.cs">
@@ -267,9 +267,6 @@
     <EmbeddedResource Include="frmphieuxuatkho.resx">
       <DependentUpon>frmphieuxuatkho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmsanpham.resx">
-      <DependentUpon>frmsanpham.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmtimkiem.resx">
       <DependentUpon>frmtimkiem.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="main1.resx">
       <DependentUpon>main1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NLcs.resx">
+      <DependentUpon>NLcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhieuNhapHang.resx">
       <DependentUpon>PhieuNhapHang.cs</DependentUpon>

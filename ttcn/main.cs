@@ -134,7 +134,7 @@ namespace ttcn
 
         private void btnOrders_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new frmsanpham(), sender);
+            OpenChildForm(new formNL(), sender);
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
