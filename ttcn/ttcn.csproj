@@ -202,6 +202,12 @@
     <Compile Include="PhieuNK.Designer.cs">
       <DependentUpon>PhieuNK.cs</DependentUpon>
     </Compile>
+    <Compile Include="PXK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PXK.Designer.cs">
+      <DependentUpon>PXK.cs</DependentUpon>
+    </Compile>
     <Compile Include="PNK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PhieuNK.resx">
       <DependentUpon>PhieuNK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PXK.resx">
+      <DependentUpon>PXK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PNK.resx">
       <DependentUpon>PNK.cs</DependentUpon>

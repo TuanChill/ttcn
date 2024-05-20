@@ -21,7 +21,7 @@ namespace ttcn
             //  Application.Run(new formNL());
             //    Application.Run(new formNguyenlieu());
             // Application.Run(new FormTinhTrang()); 
-            Application.Run(new ChucVu());
+            Application.Run(new PNK());
         }
     }
 }

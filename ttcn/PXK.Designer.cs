@@ -1,6 +1,6 @@
 ﻿namespace ttcn
 {
-    partial class PNK
+    partial class PXK
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PNK));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PXK));
             this.lb_phieunk = new System.Windows.Forms.Label();
             this.datagridview_nguyenlieu = new System.Windows.Forms.DataGridView();
             this.lb_bangchu = new System.Windows.Forms.Label();
@@ -48,6 +48,8 @@
             this.dtngaytao = new System.Windows.Forms.DateTimePicker();
             this.combo_manv = new System.Windows.Forms.ComboBox();
             this.grbox_thongtinchung = new System.Windows.Forms.GroupBox();
+            this.combo_kh = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txt_ln = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_gc = new System.Windows.Forms.TextBox();
@@ -75,17 +77,17 @@
             this.lb_phieunk.AutoSize = true;
             this.lb_phieunk.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_phieunk.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lb_phieunk.Location = new System.Drawing.Point(248, 24);
+            this.lb_phieunk.Location = new System.Drawing.Point(297, 12);
             this.lb_phieunk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_phieunk.Name = "lb_phieunk";
-            this.lb_phieunk.Size = new System.Drawing.Size(184, 24);
+            this.lb_phieunk.Size = new System.Drawing.Size(183, 24);
             this.lb_phieunk.TabIndex = 0;
-            this.lb_phieunk.Text = "PHIẾU NHẬP KHO";
+            this.lb_phieunk.Text = "PHIẾU XUẤT KHO";
             // 
             // datagridview_nguyenlieu
             // 
             this.datagridview_nguyenlieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridview_nguyenlieu.Location = new System.Drawing.Point(37, 429);
+            this.datagridview_nguyenlieu.Location = new System.Drawing.Point(86, 417);
             this.datagridview_nguyenlieu.Margin = new System.Windows.Forms.Padding(2);
             this.datagridview_nguyenlieu.Name = "datagridview_nguyenlieu";
             this.datagridview_nguyenlieu.RowHeadersWidth = 51;
@@ -98,7 +100,7 @@
             // 
             this.lb_bangchu.AutoSize = true;
             this.lb_bangchu.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lb_bangchu.Location = new System.Drawing.Point(4, 634);
+            this.lb_bangchu.Location = new System.Drawing.Point(53, 622);
             this.lb_bangchu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_bangchu.Name = "lb_bangchu";
             this.lb_bangchu.Size = new System.Drawing.Size(457, 13);
@@ -110,7 +112,7 @@
             this.btn_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_luu.Image = global::ttcn.Properties.Resources.save;
             this.btn_luu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_luu.Location = new System.Drawing.Point(200, 653);
+            this.btn_luu.Location = new System.Drawing.Point(249, 641);
             this.btn_luu.Margin = new System.Windows.Forms.Padding(2);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(94, 35);
@@ -124,7 +126,7 @@
             this.btn_thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.btn_thoat.Image = ((System.Drawing.Image)(resources.GetObject("btn_thoat.Image")));
             this.btn_thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_thoat.Location = new System.Drawing.Point(550, 653);
+            this.btn_thoat.Location = new System.Drawing.Point(599, 641);
             this.btn_thoat.Margin = new System.Windows.Forms.Padding(2);
             this.btn_thoat.Name = "btn_thoat";
             this.btn_thoat.Size = new System.Drawing.Size(94, 35);
@@ -138,7 +140,7 @@
             this.btn_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.btn_in.Image = ((System.Drawing.Image)(resources.GetObject("btn_in.Image")));
             this.btn_in.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_in.Location = new System.Drawing.Point(317, 653);
+            this.btn_in.Location = new System.Drawing.Point(366, 641);
             this.btn_in.Margin = new System.Windows.Forms.Padding(2);
             this.btn_in.Name = "btn_in";
             this.btn_in.Size = new System.Drawing.Size(94, 35);
@@ -152,7 +154,7 @@
             this.btn_taophieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.btn_taophieu.Image = ((System.Drawing.Image)(resources.GetObject("btn_taophieu.Image")));
             this.btn_taophieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_taophieu.Location = new System.Drawing.Point(573, 605);
+            this.btn_taophieu.Location = new System.Drawing.Point(622, 593);
             this.btn_taophieu.Margin = new System.Windows.Forms.Padding(2);
             this.btn_taophieu.Name = "btn_taophieu";
             this.btn_taophieu.Size = new System.Drawing.Size(108, 26);
@@ -166,7 +168,7 @@
             this.btn_them.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_them.Image = ((System.Drawing.Image)(resources.GetObject("btn_them.Image")));
             this.btn_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_them.Location = new System.Drawing.Point(74, 653);
+            this.btn_them.Location = new System.Drawing.Point(123, 641);
             this.btn_them.Margin = new System.Windows.Forms.Padding(2);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(100, 35);
@@ -177,7 +179,7 @@
             // 
             // txt_tongtien
             // 
-            this.txt_tongtien.Location = new System.Drawing.Point(413, 610);
+            this.txt_tongtien.Location = new System.Drawing.Point(462, 598);
             this.txt_tongtien.Margin = new System.Windows.Forms.Padding(2);
             this.txt_tongtien.Name = "txt_tongtien";
             this.txt_tongtien.ReadOnly = true;
@@ -187,7 +189,7 @@
             // lb_tongtien
             // 
             this.lb_tongtien.AutoSize = true;
-            this.lb_tongtien.Location = new System.Drawing.Point(353, 612);
+            this.lb_tongtien.Location = new System.Drawing.Point(402, 600);
             this.lb_tongtien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_tongtien.Name = "lb_tongtien";
             this.lb_tongtien.Size = new System.Drawing.Size(52, 13);
@@ -199,7 +201,7 @@
             this.btn_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_huy.Image = ((System.Drawing.Image)(resources.GetObject("btn_huy.Image")));
             this.btn_huy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_huy.Location = new System.Drawing.Point(430, 653);
+            this.btn_huy.Location = new System.Drawing.Point(479, 641);
             this.btn_huy.Margin = new System.Windows.Forms.Padding(2);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(97, 35);
@@ -213,7 +215,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(2, 605);
+            this.label3.Location = new System.Drawing.Point(51, 593);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 13);
@@ -236,9 +238,9 @@
             this.lb_phieunhap.Location = new System.Drawing.Point(26, 29);
             this.lb_phieunhap.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_phieunhap.Name = "lb_phieunhap";
-            this.lb_phieunhap.Size = new System.Drawing.Size(84, 13);
+            this.lb_phieunhap.Size = new System.Drawing.Size(80, 13);
             this.lb_phieunhap.TabIndex = 22;
-            this.lb_phieunhap.Text = "Mã phiếu nhập: ";
+            this.lb_phieunhap.Text = "Mã phiếu xuất: ";
             // 
             // lb_manv
             // 
@@ -246,9 +248,9 @@
             this.lb_manv.Location = new System.Drawing.Point(26, 95);
             this.lb_manv.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_manv.Name = "lb_manv";
-            this.lb_manv.Size = new System.Drawing.Size(75, 13);
+            this.lb_manv.Size = new System.Drawing.Size(59, 13);
             this.lb_manv.TabIndex = 23;
-            this.lb_manv.Text = "Mã nhân viên:";
+            this.lb_manv.Text = "Nhân viên:";
             // 
             // txt_maphieu
             // 
@@ -279,6 +281,8 @@
             // 
             // grbox_thongtinchung
             // 
+            this.grbox_thongtinchung.Controls.Add(this.combo_kh);
+            this.grbox_thongtinchung.Controls.Add(this.label9);
             this.grbox_thongtinchung.Controls.Add(this.txt_ln);
             this.grbox_thongtinchung.Controls.Add(this.label8);
             this.grbox_thongtinchung.Controls.Add(this.txt_gc);
@@ -290,7 +294,7 @@
             this.grbox_thongtinchung.Controls.Add(this.lb_phieunhap);
             this.grbox_thongtinchung.Controls.Add(this.lb_ngay);
             this.grbox_thongtinchung.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.grbox_thongtinchung.Location = new System.Drawing.Point(37, 66);
+            this.grbox_thongtinchung.Location = new System.Drawing.Point(86, 54);
             this.grbox_thongtinchung.Margin = new System.Windows.Forms.Padding(2);
             this.grbox_thongtinchung.Name = "grbox_thongtinchung";
             this.grbox_thongtinchung.Padding = new System.Windows.Forms.Padding(2);
@@ -298,6 +302,25 @@
             this.grbox_thongtinchung.TabIndex = 22;
             this.grbox_thongtinchung.TabStop = false;
             this.grbox_thongtinchung.Text = "Thông tin chung";
+            // 
+            // combo_kh
+            // 
+            this.combo_kh.FormattingEnabled = true;
+            this.combo_kh.Location = new System.Drawing.Point(106, 131);
+            this.combo_kh.Margin = new System.Windows.Forms.Padding(2);
+            this.combo_kh.Name = "combo_kh";
+            this.combo_kh.Size = new System.Drawing.Size(112, 21);
+            this.combo_kh.TabIndex = 37;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(26, 134);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 13);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "Khách hàng";
             // 
             // txt_ln
             // 
@@ -313,9 +336,9 @@
             this.label8.Location = new System.Drawing.Point(353, 122);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 13);
+            this.label8.Size = new System.Drawing.Size(56, 13);
             this.label8.TabIndex = 34;
-            this.label8.Text = "Loại nhập: ";
+            this.label8.Text = "Loại xuất: ";
             // 
             // txt_gc
             // 
@@ -423,7 +446,7 @@
             this.grbox_thongtinnl.Controls.Add(this.lb_manl);
             this.grbox_thongtinnl.Controls.Add(this.label6);
             this.grbox_thongtinnl.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.grbox_thongtinnl.Location = new System.Drawing.Point(37, 292);
+            this.grbox_thongtinnl.Location = new System.Drawing.Point(86, 280);
             this.grbox_thongtinnl.Margin = new System.Windows.Forms.Padding(2);
             this.grbox_thongtinnl.Name = "grbox_thongtinnl";
             this.grbox_thongtinnl.Padding = new System.Windows.Forms.Padding(2);
@@ -464,7 +487,7 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "Tên nguyên liệu: ";
             // 
-            // PNK
+            // PXK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -486,7 +509,7 @@
             this.Controls.Add(this.lb_phieunk);
             this.Location = new System.Drawing.Point(15, 15);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "PNK";
+            this.Name = "PXK";
             this.Load += new System.EventHandler(this.PNK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_nguyenlieu)).EndInit();
             this.grbox_thongtinchung.ResumeLayout(false);
@@ -496,6 +519,9 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ComboBox combo_kh;
+        private System.Windows.Forms.Label label9;
 
         private System.Windows.Forms.TextBox txt_ln;
         private System.Windows.Forms.Label label8;

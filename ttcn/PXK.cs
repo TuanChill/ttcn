@@ -8,11 +8,11 @@ using COMExcel = Microsoft.Office.Interop.Excel;
 
 namespace ttcn
 {
-    public partial class PNK : Form
+    public partial class PXK : Form
     {
         public DataTable DataTable;
 
-        public PNK()
+        public PXK()
         {
             InitializeComponent();
             DataTable = new DataTable();
@@ -327,8 +327,8 @@ namespace ttcn
             string date = dtngaytao.Value.ToString("yyyy-MM-dd");
             try
             {
-                // Thực hiện INSERT
-                sql = "INSERT INTO Phieunhapkho ( NgayTao, Manhanvien, tongsotien, Ghichu, Loainhap) VALUES (N'" + date +  "', N'" + combo_manv.SelectedValue + "', N'" + txt_tongtien.Text + "', N'" + txt_gc.Text + "', N'" + txt_ln.Text + "')";
+                // Thực hiện INSERT dùng các input
+                sql = "INSERT INTO PhieuXuatKho ( NgayTao, Manhanvien, tongsotien, Ghichu, Loaixuat, MaKh) VALUES (N'" + date +  "', N'" + combo_manv.SelectedValue + "', N'" + txt_tongtien.Text + "', N'" + txt_gc.Text + "', N'" + txt_ln.Text + "', N'" + combo_kh.SelectedValue + "')";
                 using (SqlConnection connection = new SqlConnection(Functions.connstring))
                 {
                     connection.Open();
@@ -359,7 +359,7 @@ namespace ttcn
                     decimal thanhtien = Decimal.Parse(r["ThanhTien"].ToString());
 
                     // insert into chitietphieunhapkho
-                    sql = "INSERT INTO Chitietphieunhapkho (MaPhieuNK, MaNL, SoLuong, ThanhTien) VALUES (@MaPhieuNK, @MaNL, @SoLuong, @ThanhTien)";
+                    sql = "INSERT INTO Chitietphieuxuatkho (MaPhieuNK, MaNL, SoLuong, ThanhTien) VALUES (@id, @MaNL, @SoLuong, @ThanhTien)";
                 }
 
                 MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -378,6 +378,8 @@ namespace ttcn
             Functions.Fillcombo("SELECT Manhanvien, Tennhanvien FROM NhanVien", combo_manv, "Manhanvien",
                 "Tennhanvien");
             Functions.Fillcombo("SELECT MaNL, TenNL FROM Nguyenlieu", combo_manl, "MaNL", "TenNL");
+            // fill combo khách hàng
+            Functions.Fillcombo("SELECT MaKH, Tenkhachhang FROM Khachhang", combo_kh, "MaKH", "Tenkhachhang");
             Console.WriteLine(combo_manl);
             ResetValues();
         }
