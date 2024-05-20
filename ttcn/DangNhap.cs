@@ -129,5 +129,11 @@ namespace ttcn
                 return;
             }
         }
+
+        private void userName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SendKeys.Send("{TAB}");
+        }
     }
 }

@@ -35,7 +35,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
+            this.btnNotifications = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnsanpham = new System.Windows.Forms.Button();
             this.btntaophieu = new System.Windows.Forms.Button();
@@ -49,12 +49,12 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelMenu.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panelMenu.Controls.Add(this.button5);
             this.panelMenu.Controls.Add(this.button4);
             this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.button2);
-            this.panelMenu.Controls.Add(this.btnReport);
+            this.panelMenu.Controls.Add(this.btnNotifications);
             this.panelMenu.Controls.Add(this.btnCustomers);
             this.panelMenu.Controls.Add(this.btnsanpham);
             this.panelMenu.Controls.Add(this.btntaophieu);
@@ -70,7 +70,8 @@
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(0, 511);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
@@ -86,7 +87,8 @@
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(0, 438);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
@@ -95,7 +97,6 @@
             this.button4.TabIndex = 9;
             this.button4.Text = "Chức vụ";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.ClientSizeChanged += new System.EventHandler(this.button4_ClientSizeChanged);
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // button3
@@ -103,7 +104,8 @@
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(0, 365);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
@@ -119,7 +121,8 @@
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(0, 292);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
@@ -130,28 +133,30 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnReport
+            // btnNotifications
             // 
-            this.btnReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReport.FlatAppearance.BorderSize = 0;
-            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 219);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(219, 73);
-            this.btnReport.TabIndex = 5;
-            this.btnReport.Text = "Tìm kiếm";
-            this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            this.btnNotifications.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNotifications.FlatAppearance.BorderSize = 0;
+            this.btnNotifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotifications.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnNotifications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotifications.Location = new System.Drawing.Point(0, 219);
+            this.btnNotifications.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNotifications.Name = "btnNotifications";
+            this.btnNotifications.Size = new System.Drawing.Size(219, 73);
+            this.btnNotifications.TabIndex = 6;
+            this.btnNotifications.Text = "Khách hàng";
+            this.btnNotifications.UseVisualStyleBackColor = true;
+            this.btnNotifications.Click += new System.EventHandler(this.btnNotifications_Click);
             // 
             // btnCustomers
             // 
             this.btnCustomers.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCustomers.FlatAppearance.BorderSize = 0;
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomers.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomers.Location = new System.Drawing.Point(0, 146);
             this.btnCustomers.Margin = new System.Windows.Forms.Padding(4);
@@ -167,7 +172,8 @@
             this.btnsanpham.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnsanpham.FlatAppearance.BorderSize = 0;
             this.btnsanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsanpham.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnsanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsanpham.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnsanpham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsanpham.Location = new System.Drawing.Point(0, 73);
             this.btnsanpham.Margin = new System.Windows.Forms.Padding(4);
@@ -183,7 +189,8 @@
             this.btntaophieu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btntaophieu.FlatAppearance.BorderSize = 0;
             this.btntaophieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btntaophieu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btntaophieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btntaophieu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btntaophieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btntaophieu.Location = new System.Drawing.Point(0, 0);
             this.btntaophieu.Margin = new System.Windows.Forms.Padding(4);
@@ -257,7 +264,6 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btntaophieu;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnsanpham;
         private System.Windows.Forms.Panel panelDesktopPane;
@@ -266,5 +272,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnNotifications;
     }
 }

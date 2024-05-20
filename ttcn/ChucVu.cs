@@ -225,6 +225,11 @@ namespace ttcn
             btnxoa.Enabled = true;
             btnhuy.Enabled = true;
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
