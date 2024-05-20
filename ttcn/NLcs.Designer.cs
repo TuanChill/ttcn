@@ -29,17 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pic = new System.Windows.Forms.PictureBox();
             this.txt_ghichu = new System.Windows.Forms.TextBox();
             this.combo_maloai = new System.Windows.Forms.ComboBox();
             this.btn_hienthi = new System.Windows.Forms.Button();
-            this.btn_dong = new System.Windows.Forms.Button();
-            this.btn_tk = new System.Windows.Forms.Button();
-            this.btn_boqua = new System.Windows.Forms.Button();
-            this.btn_sua = new System.Windows.Forms.Button();
-            this.btn_luu = new System.Windows.Forms.Button();
-            this.btn_xoa = new System.Windows.Forms.Button();
-            this.btn_them = new System.Windows.Forms.Button();
             this.datagridview_nguyenlieu = new System.Windows.Forms.DataGridView();
             this.btn_open = new System.Windows.Forms.Button();
             this.txt_anh = new System.Windows.Forms.TextBox();
@@ -73,17 +65,17 @@
             this.toolTip9 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_loainl = new System.Windows.Forms.Button();
             this.btn_tt = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
+            this.pic = new System.Windows.Forms.PictureBox();
+            this.btn_dong = new System.Windows.Forms.Button();
+            this.btn_tk = new System.Windows.Forms.Button();
+            this.btn_boqua = new System.Windows.Forms.Button();
+            this.btn_sua = new System.Windows.Forms.Button();
+            this.btn_luu = new System.Windows.Forms.Button();
+            this.btn_xoa = new System.Windows.Forms.Button();
+            this.btn_them = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_nguyenlieu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pic
-            // 
-            this.pic.Location = new System.Drawing.Point(711, 101);
-            this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(174, 139);
-            this.pic.TabIndex = 86;
-            this.pic.TabStop = false;
             // 
             // txt_ghichu
             // 
@@ -106,83 +98,14 @@
             // 
             // btn_hienthi
             // 
+            this.btn_hienthi.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_hienthi.Location = new System.Drawing.Point(625, 630);
             this.btn_hienthi.Name = "btn_hienthi";
             this.btn_hienthi.Size = new System.Drawing.Size(92, 41);
             this.btn_hienthi.TabIndex = 83;
             this.btn_hienthi.Text = "Hiển thị DS";
-            this.btn_hienthi.UseVisualStyleBackColor = true;
+            this.btn_hienthi.UseVisualStyleBackColor = false;
             this.btn_hienthi.Click += new System.EventHandler(this.btn_hienthi_Click);
-            // 
-            // btn_dong
-            // 
-            this.btn_dong.Location = new System.Drawing.Point(819, 630);
-            this.btn_dong.Name = "btn_dong";
-            this.btn_dong.Size = new System.Drawing.Size(92, 41);
-            this.btn_dong.TabIndex = 82;
-            this.btn_dong.Text = "Đóng";
-            this.btn_dong.UseVisualStyleBackColor = true;
-            this.btn_dong.Click += new System.EventHandler(this.btn_dong_Click);
-            // 
-            // btn_tk
-            // 
-            this.btn_tk.Location = new System.Drawing.Point(527, 630);
-            this.btn_tk.Name = "btn_tk";
-            this.btn_tk.Size = new System.Drawing.Size(92, 41);
-            this.btn_tk.TabIndex = 81;
-            this.btn_tk.Text = "Tìm kiếm";
-            this.btn_tk.UseVisualStyleBackColor = true;
-            this.btn_tk.Click += new System.EventHandler(this.btn_tk_Click);
-            // 
-            // btn_boqua
-            // 
-            this.btn_boqua.Location = new System.Drawing.Point(429, 630);
-            this.btn_boqua.Name = "btn_boqua";
-            this.btn_boqua.Size = new System.Drawing.Size(92, 41);
-            this.btn_boqua.TabIndex = 80;
-            this.btn_boqua.Text = "Bỏ qua";
-            this.btn_boqua.UseVisualStyleBackColor = true;
-            this.btn_boqua.Click += new System.EventHandler(this.btn_boqua_Click);
-            // 
-            // btn_sua
-            // 
-            this.btn_sua.Location = new System.Drawing.Point(223, 630);
-            this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(92, 41);
-            this.btn_sua.TabIndex = 79;
-            this.btn_sua.Text = "Sửa";
-            this.btn_sua.UseVisualStyleBackColor = true;
-            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
-            // 
-            // btn_luu
-            // 
-            this.btn_luu.Location = new System.Drawing.Point(331, 630);
-            this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(92, 41);
-            this.btn_luu.TabIndex = 78;
-            this.btn_luu.Text = "Lưu";
-            this.btn_luu.UseVisualStyleBackColor = true;
-            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
-            // 
-            // btn_xoa
-            // 
-            this.btn_xoa.Location = new System.Drawing.Point(125, 630);
-            this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(92, 41);
-            this.btn_xoa.TabIndex = 77;
-            this.btn_xoa.Text = "Xóa";
-            this.btn_xoa.UseVisualStyleBackColor = true;
-            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
-            // 
-            // btn_them
-            // 
-            this.btn_them.Location = new System.Drawing.Point(27, 630);
-            this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(92, 41);
-            this.btn_them.TabIndex = 76;
-            this.btn_them.Text = "Thêm";
-            this.btn_them.UseVisualStyleBackColor = true;
-            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // datagridview_nguyenlieu
             // 
@@ -318,11 +241,11 @@
             // 
             this.lb_danhmuc.AutoSize = true;
             this.lb_danhmuc.BackColor = System.Drawing.SystemColors.Control;
-            this.lb_danhmuc.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_danhmuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_danhmuc.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.lb_danhmuc.Location = new System.Drawing.Point(275, 35);
             this.lb_danhmuc.Name = "lb_danhmuc";
-            this.lb_danhmuc.Size = new System.Drawing.Size(416, 35);
+            this.lb_danhmuc.Size = new System.Drawing.Size(424, 36);
             this.lb_danhmuc.TabIndex = 59;
             this.lb_danhmuc.Text = "DANH SÁCH NGUYÊN LIỆU";
             // 
@@ -384,12 +307,13 @@
             // 
             // btn_An
             // 
+            this.btn_An.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_An.Location = new System.Drawing.Point(723, 630);
             this.btn_An.Name = "btn_An";
             this.btn_An.Size = new System.Drawing.Size(92, 41);
             this.btn_An.TabIndex = 93;
             this.btn_An.Text = "Ẩn DS";
-            this.btn_An.UseVisualStyleBackColor = true;
+            this.btn_An.UseVisualStyleBackColor = false;
             this.btn_An.Click += new System.EventHandler(this.btn_An_Click);
             // 
             // btn_loainl
@@ -411,6 +335,91 @@
             this.btn_tt.Text = "Tình trạng";
             this.btn_tt.UseVisualStyleBackColor = true;
             this.btn_tt.Click += new System.EventHandler(this.btn_tt_Click);
+            // 
+            // pic
+            // 
+            this.pic.Location = new System.Drawing.Point(711, 101);
+            this.pic.Name = "pic";
+            this.pic.Size = new System.Drawing.Size(174, 139);
+            this.pic.TabIndex = 86;
+            this.pic.TabStop = false;
+            // 
+            // btn_dong
+            // 
+            this.btn_dong.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_dong.Location = new System.Drawing.Point(819, 630);
+            this.btn_dong.Name = "btn_dong";
+            this.btn_dong.Size = new System.Drawing.Size(92, 41);
+            this.btn_dong.TabIndex = 82;
+            this.btn_dong.Text = "Đóng";
+            this.btn_dong.UseVisualStyleBackColor = false;
+            this.btn_dong.Click += new System.EventHandler(this.btn_dong_Click);
+            // 
+            // btn_tk
+            // 
+            this.btn_tk.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_tk.Location = new System.Drawing.Point(527, 630);
+            this.btn_tk.Name = "btn_tk";
+            this.btn_tk.Size = new System.Drawing.Size(92, 41);
+            this.btn_tk.TabIndex = 81;
+            this.btn_tk.Text = "Tìm kiếm";
+            this.btn_tk.UseVisualStyleBackColor = false;
+            this.btn_tk.Click += new System.EventHandler(this.btn_tk_Click);
+            // 
+            // btn_boqua
+            // 
+            this.btn_boqua.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_boqua.Location = new System.Drawing.Point(429, 630);
+            this.btn_boqua.Name = "btn_boqua";
+            this.btn_boqua.Size = new System.Drawing.Size(92, 41);
+            this.btn_boqua.TabIndex = 80;
+            this.btn_boqua.Text = "Bỏ qua";
+            this.btn_boqua.UseVisualStyleBackColor = false;
+            this.btn_boqua.Click += new System.EventHandler(this.btn_boqua_Click);
+            // 
+            // btn_sua
+            // 
+            this.btn_sua.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_sua.Location = new System.Drawing.Point(223, 630);
+            this.btn_sua.Name = "btn_sua";
+            this.btn_sua.Size = new System.Drawing.Size(92, 41);
+            this.btn_sua.TabIndex = 79;
+            this.btn_sua.Text = "Sửa";
+            this.btn_sua.UseVisualStyleBackColor = false;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
+            // 
+            // btn_luu
+            // 
+            this.btn_luu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_luu.Location = new System.Drawing.Point(331, 630);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(92, 41);
+            this.btn_luu.TabIndex = 78;
+            this.btn_luu.Text = "Lưu";
+            this.btn_luu.UseVisualStyleBackColor = false;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
+            // 
+            // btn_xoa
+            // 
+            this.btn_xoa.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_xoa.Location = new System.Drawing.Point(125, 630);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(92, 41);
+            this.btn_xoa.TabIndex = 77;
+            this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.UseVisualStyleBackColor = false;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
+            // 
+            // btn_them
+            // 
+            this.btn_them.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_them.Location = new System.Drawing.Point(27, 630);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.Size = new System.Drawing.Size(92, 41);
+            this.btn_them.TabIndex = 76;
+            this.btn_them.Text = "Thêm";
+            this.btn_them.UseVisualStyleBackColor = false;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // formNL
             // 
@@ -455,8 +464,8 @@
             this.Name = "formNL";
             this.Text = "Nguyên liệu";
             this.Load += new System.EventHandler(this.formNL_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_nguyenlieu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

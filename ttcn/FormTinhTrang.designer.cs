@@ -52,13 +52,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(292, 18);
+            this.label1.Location = new System.Drawing.Point(195, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 42);
+            this.label1.Size = new System.Drawing.Size(432, 36);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Tình Trạng";
+            this.label1.Text = "TÌNH TRẠNG NGUYÊN LIỆU";
             // 
             // groupBox1
             // 
@@ -75,6 +75,7 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tình trạng";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txttentt
             // 
@@ -144,6 +145,7 @@
             // 
             // btnthem
             // 
+            this.btnthem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnthem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnthem.Location = new System.Drawing.Point(66, 450);
             this.btnthem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -151,11 +153,12 @@
             this.btnthem.Size = new System.Drawing.Size(86, 47);
             this.btnthem.TabIndex = 5;
             this.btnthem.Text = "Thêm";
-            this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.UseVisualStyleBackColor = false;
             this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // btnsua
             // 
+            this.btnsua.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsua.Location = new System.Drawing.Point(185, 450);
             this.btnsua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -163,11 +166,12 @@
             this.btnsua.Size = new System.Drawing.Size(87, 47);
             this.btnsua.TabIndex = 7;
             this.btnsua.Text = "Sửa ";
-            this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.UseVisualStyleBackColor = false;
             this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnxoa
             // 
+            this.btnxoa.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnxoa.Location = new System.Drawing.Point(315, 450);
             this.btnxoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -175,11 +179,12 @@
             this.btnxoa.Size = new System.Drawing.Size(87, 47);
             this.btnxoa.TabIndex = 8;
             this.btnxoa.Text = "Xóa";
-            this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.UseVisualStyleBackColor = false;
             this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnluu
             // 
+            this.btnluu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnluu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnluu.Location = new System.Drawing.Point(448, 450);
             this.btnluu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -187,11 +192,12 @@
             this.btnluu.Size = new System.Drawing.Size(69, 47);
             this.btnluu.TabIndex = 9;
             this.btnluu.Text = "Lưu";
-            this.btnluu.UseVisualStyleBackColor = true;
+            this.btnluu.UseVisualStyleBackColor = false;
             this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
             // 
             // btnHuy
             // 
+            this.btnHuy.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Location = new System.Drawing.Point(564, 450);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -199,11 +205,12 @@
             this.btnHuy.Size = new System.Drawing.Size(81, 47);
             this.btnHuy.TabIndex = 10;
             this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(677, 450);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -211,7 +218,7 @@
             this.button1.Size = new System.Drawing.Size(77, 47);
             this.button1.TabIndex = 11;
             this.button1.Text = "Đóng";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormTinhTrang

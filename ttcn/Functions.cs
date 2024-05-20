@@ -21,7 +21,7 @@ namespace ttcn.Class
             Conn = new SqlConnection();
             Conn.ConnectionString = connstring;
             Conn.Open();
-            //MessageBox.Show("Ket noi thanh cong!");
+          //  MessageBox.Show("Ket noi thanh cong!");
         }
 
         //[Phương thức ngắt kết nối từ cơ sở dữ liệu]
@@ -33,6 +33,18 @@ namespace ttcn.Class
                 Conn.Dispose();
                 Conn = null;
             }
+        }
+
+        // timkiem
+        public static DataTable GetDataToTable(string sql)
+        {
+            SqlDataAdapter mydata = new SqlDataAdapter();
+            mydata.SelectCommand = new SqlCommand();
+            mydata.SelectCommand.Connection = Functions.Conn;
+            mydata.SelectCommand.CommandText = sql;
+            DataTable table = new DataTable();
+            mydata.Fill(table);
+            return table;
         }
 
         //[Phương thức truy vấn dữ liệu và trả về DataTable]
@@ -194,6 +206,22 @@ namespace ttcn.Class
             }
             cmd.Dispose();
             cmd = null;
+        }
+
+        // covert 
+        public static string ConvertDateTime(string d)
+        {
+            string[] parts = d.Split('/');
+            string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+            return dt;
+        }
+        public static bool IsDate(string d)
+        {
+            string[] parts = d.Split('/');
+            if ((Convert.ToInt32(parts[0]) >= 1) && (Convert.ToInt32(parts[0]) <= 31) && (Convert.ToInt32(parts[1]) >= 1) && (Convert.ToInt32(parts[1]) <= 12) && (Convert.ToInt32(parts[2]) >= 1900))
+                return true;
+            else
+                return false;
         }
         public static int GetSelectedValue(ComboBox comboBox)
         {

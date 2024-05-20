@@ -26,7 +26,7 @@ namespace ttcn
             if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int maCN = Convert.ToInt32(txtmcn.Text.Trim());
-                string sql = "DELETE FROM dbo.chinhanh WHERE machinhanh = " + maCN;
+                string sql = "DELETE FROM Chinhanh WHERE Machinhanh = " + maCN;
 
                 string connectionString = Functions.Conn.ConnectionString;
 
@@ -43,6 +43,10 @@ namespace ttcn
                             txttcn.Text = "";
                             txttcn.Focus();
                             MessageBox.Show("Xóa dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtdc.Clear();
+                            txtsdt.Clear();
+                            txtmcn.Clear();
+                            txtmcn.Focus();
                             loaddata();
                         }
                         else
@@ -58,29 +62,30 @@ namespace ttcn
         {
             SqlConnection conn = Functions.Conn;
             string sql;
-            sql = "select machinhanh, tenchinhanh, diachi, sdt from dbo.chinhanh ";
+            sql = "select Machinhanh, Tenchinhanh, Diachi, Sodienthoai from Chinhanh ";
             DataTable a = Functions.GetdataToTable(sql);
             dgcn.DataSource = a;
         }
         private void button2_Click(object sender, EventArgs e)
         {
             string sql;
-            sql = "INSERT INTO dbo.ChiNhanh (TenChiNhanh, DiaChi, SDT) VALUES (N'" + txttcn.Text.Trim() + "', N'" + txtdc.Text.Trim() + "', N'" + txtsdt.Text.Trim() + "')";
+            sql = "INSERT INTO ChiNhanh (TenChiNhanh, Diachi, Sodienthoai) VALUES (N'" + txttcn.Text.Trim() + "', N'" + txtdc.Text.Trim() + "', N'" + txtsdt.Text.Trim() + "')";
 
-            if (Functions.Checkkey(sql))
+            try
             {
-                // Thực hiện câu lệnh INSERT khi không có trùng khóa
-                // ...
-
-                txttcn.Text = "";
-                txttcn.Focus();
+                // run sql
+                Functions.RunSQL(sql);
                 MessageBox.Show("Thêm dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
+            } catch (Exception ex)
             {
-                MessageBox.Show("Trùng khóa! Dữ liệu đã tồn tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Thêm dữ liệu không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
+            txttcn.Clear();
+            txtsdt.Clear();
+            txtdc.Clear();
+            txtmcn.Clear();
 
             loaddata();
         }
@@ -91,7 +96,7 @@ namespace ttcn
 
             SqlConnection conn = Functions.Conn;
             string sql;
-            sql = "select machinhanh, tenchinhanh, diachi, sdt from dbo.chinhanh";
+            sql = "select Machinhanh, Tenchinhanh, Diachi, Sodienthoai from Chinhanh";
             DataTable a = Functions.GetdataToTable(sql);
             dgcn.DataSource = a;
 
@@ -107,36 +112,21 @@ namespace ttcn
 
             dgcn.AllowUserToAddRows = false;
             dgcn.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            txtmcn.Enabled = false;
         }
 
         private void btnthem_Click(object sender, EventArgs e)
         {
-            txtmcn.Enabled = false;
             btnluu.Enabled = true;
             btnthem.Enabled = false;
             btnxoa.Enabled = false;
             btnhuy.Enabled = true;
             btnsua.Enabled = false;
             txttcn.Clear();
-            // Lấy mã sản phẩm lớn nhất trong bảng sản phẩm
-            if (Functions.Conn.State == ConnectionState.Closed)
-            {
-                Functions.Conn.Open();
-            }
-            string query = "SELECT MAX(MaChiNhanh) FROM ChiNhanh";
-            SqlCommand command = new SqlCommand(query, Functions.Conn);
-            object result = command.ExecuteScalar();
-            if (result != DBNull.Value)
-            {
-                int maxMacn = Convert.ToInt32(result);
-                // Tăng mã sản phẩm lên 1 và hiển thị trong txtmasp
-                txtmcn.Text = (maxMacn + 1).ToString();
-            }
-            else
-            {
-                // Nếu không có sản phẩm nào trong bảng, gán mã sản phẩm mặc định là 1
-                txtmcn.Text = "1";
-            }
+            txtsdt.Clear();
+            txtdc.Clear();
+            txtmcn.Clear();
         }
 
         private void btnhuy_Click(object sender, EventArgs e)
@@ -162,7 +152,7 @@ namespace ttcn
             txtmcn.Text = dgcn.CurrentRow.Cells["MaChiNhanh"].Value.ToString();
             txttcn.Text = dgcn.CurrentRow.Cells["TenChiNhanh"].Value.ToString();
             txtdc.Text = dgcn.CurrentRow.Cells["DiaChi"].Value.ToString();
-            txtsdt.Text = dgcn.CurrentRow.Cells["SDT"].Value.ToString();
+            txtsdt.Text = dgcn.CurrentRow.Cells["Sodienthoai"].Value.ToString();
             btnsua.Enabled = true;
             btnxoa.Enabled = true;
             btnhuy.Enabled = true;
@@ -171,7 +161,7 @@ namespace ttcn
         private void btnsua_Click(object sender, EventArgs e)
         {
             int maCN = Convert.ToInt32(txtmcn.Text.Trim());
-            string sql = "UPDATE dbo.chinhanh SET Tenchinhanh = N'" + txttcn.Text.Trim() + "', diachi = N'" + txtdc.Text.Trim() + "', sdt = N'" + txtsdt.Text.Trim() + "' WHERE machinhanh = " + maCN;
+            string sql = "UPDATE Chinhanh SET Tenchinhanh = N'" + txttcn.Text.Trim() + "', Diachi = N'" + txtdc.Text.Trim() + "', Sodienthoai = N'" + txtsdt.Text.Trim() + "' WHERE machinhanh = " + maCN;
             string connectionString = Functions.Conn.ConnectionString;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -203,7 +193,10 @@ namespace ttcn
             this.Close();
         }
 
-      
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }

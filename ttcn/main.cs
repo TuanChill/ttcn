@@ -199,12 +199,12 @@ namespace ttcn
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormNCC(), sender);
+            OpenChildForm(new NCCap(), sender);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormNhanVien(), sender);
+            OpenChildForm(new NV(), sender);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -244,9 +244,10 @@ namespace ttcn
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DangNhap a = new DangNhap();
-            a.Show();
+            //this.Hide();
+            //DangNhap a = new DangNhap();
+            //a.Show();
+            OpenChildForm(new DangNhap(), sender);
         }
     }
 }

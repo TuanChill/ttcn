@@ -166,6 +166,7 @@ namespace ttcn
             btn_sua.Enabled = true;
             btn_luu.Enabled = false;
             txt_manl.Enabled = false;
+            Load_DataGridView();
         }
 
         private void btn_dong_Click(object sender, EventArgs e)
@@ -385,6 +386,7 @@ namespace ttcn
 
             datagridview_nguyenlieu.DataSource = dt;
             ResetValues();
+            btn_boqua.Enabled = true;
 
         }
 
